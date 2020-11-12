@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bottom
+    uniqueID: 1332562635
+    locked: 0
+  - name: Midth
+    uniqueID: 2715332091
+    locked: 0
+  - name: Top
+    uniqueID: 1142561489
+    locked: 0
