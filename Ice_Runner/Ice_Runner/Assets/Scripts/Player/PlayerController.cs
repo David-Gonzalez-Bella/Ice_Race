@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(InputPlayer))]
+[RequireComponent(typeof(Health))]
 public class PlayerController : MonoBehaviour
 {
     //Variables
+    //Movement
     private float xSpeed = 5.0f;
     private float jumpForceBasic = 2.0f;
     private float jumpForceIncrement = 9.0f;
@@ -17,7 +20,10 @@ public class PlayerController : MonoBehaviour
     public LayerMask floorLayer;
     public LayerMask wallsLayer;
 
-    //Components
+    //Score
+    private int score = 0;
+
+    //References
     private Animator anim;
     private Rigidbody2D rb;
     private InputPlayer input;
@@ -73,6 +79,14 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(xSpeed, rb.velocity.y);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag.CompareTo("Coin") == 0) //If the player grabs a coin
+        {
+            UI_Manager.sharedInstance.UpdateScoreText(++score);
+        }
+    }
+
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForceBasic, ForceMode2D.Impulse);
@@ -95,7 +109,7 @@ public class PlayerController : MonoBehaviour
     {
         wallJumping = true;
         rb.AddForce(wallJumpDirection * wallJumpForce, ForceMode2D.Impulse);
-        wallJumpDirection.x *= -1; 
+        wallJumpDirection.x *= -1;
     }
 
     private bool isTouchingFloor() //We cast a ray from the player's position to check if it touches the floor layer
