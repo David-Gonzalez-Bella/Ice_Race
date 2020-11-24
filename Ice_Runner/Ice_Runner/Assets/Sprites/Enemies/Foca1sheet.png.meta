@@ -1,0 +1,556 @@
+fileFormatVersion: 2
+guid: f0b4ff03316b0df42a7f0af355d544af
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7662834486200205606
+    second: Foca1sheet_0
+  - first:
+      213: -4489420196427452877
+    second: Foca1sheet_1
+  - first:
+      213: 4042183450476750300
+    second: Foca1sheet_2
+  - first:
+      213: 6111919431128821357
+    second: Foca1sheet_3
+  - first:
+      213: 5051050091876189383
+    second: Foca1sheet_4
+  - first:
+      213: -1685378513684514030
+    second: Foca1sheet_5
+  - first:
+      213: 1748519118674293087
+    second: Foca1sheet_6
+  - first:
+      213: 2817490109179159517
+    second: Foca1sheet_7
+  - first:
+      213: 6547381713096143890
+    second: Foca1sheet_8
+  - first:
+      213: 188753023208861732
+    second: Foca1sheet_9
+  - first:
+      213: 7878838826076671210
+    second: Foca1sheet_10
+  - first:
+      213: -3512542598154311100
+    second: Foca1sheet_11
+  - first:
+      213: -1710503703268143772
+    second: Foca1sheet_12
+  - first:
+      213: -4181344294950138827
+    second: Foca1sheet_13
+  - first:
+      213: 2954610827842066752
+    second: Foca1sheet_14
+  - first:
+      213: 2265657676656155127
+    second: Foca1sheet_15
+  - first:
+      213: -4834768396584013938
+    second: Foca1sheet_16
+  - first:
+      213: 3016361621929039378
+    second: Foca1sheet_17
+  - first:
+      213: 8268660579485974466
+    second: Foca1sheet_18
+  - first:
+      213: 2532002773040206001
+    second: Foca1sheet_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 448
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Foca1sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6218392ad5bd75a60800000000000000
+      internalID: 7662834486200205606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_1
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e2a780e1062b1c0800000000000000
+      internalID: -4489420196427452877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd521aa8e68b81830800000000000000
+      internalID: 4042183450476750300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ead3c1756e1d450800000000000000
+      internalID: 6111919431128821357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c40cf40c4fe81640800000000000000
+      internalID: 5051050091876189383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b32cbdb255c98e0800000000000000
+      internalID: -1685378513684514030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_6
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f517f87dfdcf34810800000000000000
+      internalID: 1748519118674293087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_7
+      rect:
+        serializedVersion: 2
+        x: 5292
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3eccb935cb91720800000000000000
+      internalID: 2817490109179159517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_8
+      rect:
+        serializedVersion: 2
+        x: 6048
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214fbf18af8fcda50800000000000000
+      internalID: 6547381713096143890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_9
+      rect:
+        serializedVersion: 2
+        x: 6804
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42035a2efd59e9200800000000000000
+      internalID: 188753023208861732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_10
+      rect:
+        serializedVersion: 2
+        x: 7560
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec0bde1b22475d60800000000000000
+      internalID: 7878838826076671210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_11
+      rect:
+        serializedVersion: 2
+        x: 8316
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44aa5920e11f04fc0800000000000000
+      internalID: -3512542598154311100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_12
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d46bbc1f11348e0800000000000000
+      internalID: -1710503703268143772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_13
+      rect:
+        serializedVersion: 2
+        x: 9828
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c04e77481e8f5c0800000000000000
+      internalID: -4181344294950138827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_14
+      rect:
+        serializedVersion: 2
+        x: 10584
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0499c0bc4e2e00920800000000000000
+      internalID: 2954610827842066752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_15
+      rect:
+        serializedVersion: 2
+        x: 11340
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f91ab727ab317f10800000000000000
+      internalID: 2265657676656155127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_16
+      rect:
+        serializedVersion: 2
+        x: 12096
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f235e42c377ecb0800000000000000
+      internalID: -4834768396584013938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foca1sheet_17
+      rect:
+        serializedVersion: 2
+        x: 12852
+        y: 0
+        width: 756.6667
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216933de9e44cd920800000000000000
+      internalID: 3016361621929039378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
