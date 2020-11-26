@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (!wallJumping)
-            rb.velocity = new Vector2(xSpeed, rb.velocity.y);
+           rb.velocity = new Vector2(xSpeed, rb.velocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
