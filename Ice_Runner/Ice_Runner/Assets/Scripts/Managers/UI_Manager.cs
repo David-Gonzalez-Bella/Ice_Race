@@ -28,6 +28,7 @@ public class UI_Manager : MonoBehaviour
     void Start()
     {
         currentLevel = GameObject.FindGameObjectWithTag("Level").GetComponent<Level_Info>();
+        UpdateScoreText(0);
     }
 
     void Update()

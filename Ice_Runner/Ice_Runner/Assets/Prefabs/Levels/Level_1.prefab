@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 4162125662814439873}
   - component: {fileID: 7432635170506526087}
   - component: {fileID: 7262495195162657855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mid_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1630,7 +1630,7 @@ GameObject:
   - component: {fileID: 4521109065259406052}
   - component: {fileID: 7030272728789633960}
   - component: {fileID: 5677804356306892085}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mid_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

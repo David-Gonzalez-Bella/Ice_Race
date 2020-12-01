@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Level
-  - coins
+  - Coin
+  - DeadZone
   layers:
   - Default
   - TransparentFX

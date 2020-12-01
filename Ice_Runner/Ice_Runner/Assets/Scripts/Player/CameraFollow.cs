@@ -1,0 +1,55 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraFollow : MonoBehaviour
+{
+    //Variables
+    public static CameraFollow sharedInstance { get; private set; } //Singleton
+
+    //References
+    public Transform player;
+    public Collider2D deadZoneHeight;
+
+    //Camera follow
+    public float followOffset;
+    public float xOffset;
+    public float yOffset;
+    private Vector3 camHeight;
+    private Vector3 cameraPosition;
+    private Vector3 tracking;
+    private Vector3 camVel;
+    [SerializeField] private float dampTime = 1.0f;
+    public bool followPlayerY = false;
+
+    private void Awake()
+    {
+        if (sharedInstance == null)
+            sharedInstance = this;
+
+        this.transform.position = Vector3.zero;
+    }
+
+    void Start()
+    {
+        camHeight = this.transform.position += Vector3.up * yOffset;
+    }
+
+    void Update()
+    {
+        if (!followPlayerY)
+        {
+            cameraPosition = new Vector3(player.position.x + xOffset, camHeight.y, -10);
+        }
+        else
+        {
+            cameraPosition = new Vector3(player.position.x + xOffset, player.position.y - followOffset + yOffset, -10);
+        }
+        tracking = Vector3.SmoothDamp(this.transform.position, cameraPosition, ref camVel, dampTime);
+    }
+
+    private void FixedUpdate()
+    {
+        this.transform.position = tracking;
+    }
+}

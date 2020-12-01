@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager sharedInstance { get; private set; } //Singleton
 
     //References
-    public GameObject player { get; private set; }
+    public GameObject player;
     public Camera mainCamera;
 
     private void Awake()
@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-
         ScaleCamera();
     }
 

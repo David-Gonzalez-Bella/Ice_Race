@@ -16,9 +16,13 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridPaintPaletteClipboard
+    - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
+    - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -64,6 +68,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
     - Class: 60
       Script: {instanceID: 0}
     - Class: 62
@@ -85,49 +91,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 628}
     - Class: 114
-      Script: {instanceID: 11850}
+      Script: {instanceID: 11866}
     - Class: 114
-      Script: {instanceID: 11874}
+      Script: {instanceID: 11890}
     - Class: 114
-      Script: {instanceID: 12184}
+      Script: {instanceID: 12200}
     - Class: 114
-      Script: {instanceID: 12248}
+      Script: {instanceID: 12264}
     - Class: 114
-      Script: {instanceID: 12288}
+      Script: {instanceID: 12304}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 13016}
     - Class: 114
-      Script: {instanceID: 13064}
+      Script: {instanceID: 13080}
     - Class: 114
-      Script: {instanceID: 13090}
+      Script: {instanceID: 13106}
     - Class: 114
-      Script: {instanceID: 13124}
+      Script: {instanceID: 13140}
     - Class: 114
-      Script: {instanceID: 13534}
+      Script: {instanceID: 13550}
     - Class: 114
-      Script: {instanceID: 13666}
+      Script: {instanceID: 13682}
     - Class: 114
-      Script: {instanceID: 13856}
+      Script: {instanceID: 13872}
     - Class: 114
-      Script: {instanceID: 14272}
+      Script: {instanceID: 14288}
     - Class: 114
-      Script: {instanceID: 14294}
+      Script: {instanceID: 14310}
     - Class: 114
-      Script: {instanceID: 14370}
+      Script: {instanceID: 14386}
     - Class: 114
-      Script: {instanceID: 14580}
+      Script: {instanceID: 14596}
     - Class: 114
-      Script: {instanceID: 14688}
+      Script: {instanceID: 14704}
     - Class: 114
-      Script: {instanceID: 14776}
+      Script: {instanceID: 14792}
     - Class: 114
-      Script: {instanceID: 15088}
+      Script: {instanceID: 15104}
     - Class: 114
-      Script: {instanceID: 15126}
+      Script: {instanceID: 15142}
     - Class: 114
-      Script: {instanceID: 15390}
+      Script: {instanceID: 15406}
     - Class: 114
-      Script: {instanceID: 15448}
+      Script: {instanceID: 15464}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -974,4 +980,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/USUARIO/Desktop/IceRace.apk
+  playerPath: D:/Unity/Ejecutables/Ice Race/Landscapes build.apk

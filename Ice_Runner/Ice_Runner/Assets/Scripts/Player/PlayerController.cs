@@ -8,15 +8,15 @@ public class PlayerController : MonoBehaviour
 {
     //Variables
     //Movement
-    private float xSpeed = 5.0f;
-    private float jumpForceBasic = 2.0f;
-    private float jumpForceIncrement = 9.0f;
+    public float xSpeed = 5.5f;
+    public float jumpForceBasic = 115.0f;
+    public float jumpForceIncrement = 400.0f;
     private bool isJumping = false;
-    private float jumpTime = 0.35f;
+    private float jumpTime = 0.15f;
     private float jumpTimeCounter;
     private bool wallJumping = false;
-    private float wallJumpForce = 4.0f;
-    private Vector2 wallJumpDirection = new Vector2(-1.0f, 1.5f);
+    public float wallJumpForce = 112.0f;
+    private Vector2 wallJumpDirection = new Vector2(-1.0f, 1.2f);
     public LayerMask floorLayer;
     public LayerMask wallsLayer;
 
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (!wallJumping)
-           rb.velocity = new Vector2(xSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(xSpeed, rb.velocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag.CompareTo("Coin") == 0) //If the player grabs a coin
         {
             UI_Manager.sharedInstance.UpdateScoreText(++score);
+            Destroy(collision.gameObject);
         }
     }
 
@@ -114,11 +115,11 @@ public class PlayerController : MonoBehaviour
 
     private bool isTouchingFloor() //We cast a ray from the player's position to check if it touches the floor layer
     {
-        return Physics2D.Raycast(this.transform.position, Vector2.down, 0.5f, floorLayer);
+        return Physics2D.Raycast(this.transform.position, Vector2.down, 0.5f, floorLayer) || Physics2D.Raycast(this.transform.position, Vector2.down, 0.5f, wallsLayer); //The secod conditions is for the case where we step on a wall
     }
 
     private bool isTouchingWall() //We cast a ray from the player's position to check if it touches the floor layer
     {
-        return Physics2D.Raycast(this.transform.position, Vector2.left, 0.5f, wallsLayer) || Physics2D.Raycast(this.transform.position, Vector2.right, 0.5f, wallsLayer);
+        return Physics2D.Raycast(this.transform.position, Vector2.left, 0.8f, wallsLayer) || Physics2D.Raycast(this.transform.position, Vector2.right, 0.8f, wallsLayer);
     }
 }

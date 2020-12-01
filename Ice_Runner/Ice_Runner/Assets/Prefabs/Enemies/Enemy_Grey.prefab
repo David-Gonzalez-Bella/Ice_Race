@@ -168,7 +168,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.000826713, y: -0.02983645}
@@ -200,9 +200,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 0
-  ySpeed: 0
-  floorLayer:
-    serializedVersion: 2
-    m_Bits: 0
   startMovePoint: 0
   endMovePoint: 0
