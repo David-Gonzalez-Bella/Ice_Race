@@ -9,9 +9,10 @@ public class UI_Manager : MonoBehaviour
     //Variables
     public static UI_Manager sharedInstance { get; private set; } //Singleton
     public float countDownTime;
-    private bool countDownActive = true;
+    public bool countDownActive = true;
 
     //References
+    public GameObject inGameUI;
     public Text lifesText;
     public Text scoreText;
     public Text countDownText;

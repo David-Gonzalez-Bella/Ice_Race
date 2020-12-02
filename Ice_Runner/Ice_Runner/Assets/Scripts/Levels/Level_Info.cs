@@ -15,9 +15,4 @@ public class Level_Info : MonoBehaviour
     {
         levelSize = endPoint.position.x - startPoint.position.x;
     }
-
-    void Update()
-    {
-        
-    }
 }

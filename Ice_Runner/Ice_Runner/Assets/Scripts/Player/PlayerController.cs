@@ -37,11 +37,6 @@ public class PlayerController : MonoBehaviour
         input = GetComponent<InputPlayer>();
     }
 
-    void Start()
-    {
-
-    }
-
     private void Update()
     {
         //Jumping
@@ -90,7 +85,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.tag.CompareTo("Castle") == 0)
         {
-
+            GameManager.sharedInstance.GoToWinScreen(score, UI_Manager.sharedInstance.countDownTime);
         }
     }
 

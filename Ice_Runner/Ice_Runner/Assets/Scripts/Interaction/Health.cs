@@ -38,11 +38,6 @@ public class Health : MonoBehaviour
         CurrentLifes += maxLifes;
     }
 
-    void Update()
-    {
-        
-    }
-
     private void UpdateLifesText() //Call the lifes update method in the UI
     {
         UI_Manager.sharedInstance.UpdateLifesText(this);

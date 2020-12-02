@@ -23,14 +23,10 @@ public class Enemy : MonoBehaviour
         sr = GetComponentInChildren<SpriteRenderer>();
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        Behaviour(); //All enemies will do its behaviour every frame
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
+            Behaviour(); //All enemies will do its behaviour every frame
     }
 
     protected virtual void Behaviour() { } //Each enemy has a different behaviour

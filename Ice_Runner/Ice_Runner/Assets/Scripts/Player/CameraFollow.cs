@@ -36,15 +36,18 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        if (!followPlayerY)
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
         {
-            cameraPosition = new Vector3(player.position.x + xOffset, camHeight.y, -10);
+            if (!followPlayerY)
+            {
+                cameraPosition = new Vector3(player.position.x + xOffset, camHeight.y, -10);
+            }
+            else
+            {
+                cameraPosition = new Vector3(player.position.x + xOffset, player.position.y - followOffset + yOffset, -10);
+            }
+            tracking = Vector3.SmoothDamp(this.transform.position, cameraPosition, ref camVel, dampTime);
         }
-        else
-        {
-            cameraPosition = new Vector3(player.position.x + xOffset, player.position.y - followOffset + yOffset, -10);
-        }
-        tracking = Vector3.SmoothDamp(this.transform.position, cameraPosition, ref camVel, dampTime);
     }
 
     private void FixedUpdate()
