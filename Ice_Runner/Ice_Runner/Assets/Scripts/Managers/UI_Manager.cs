@@ -53,7 +53,8 @@ public class UI_Manager : MonoBehaviour
 
     public void UpdateLifesText(Health lifes) //Update UI lifes text
     {
-        lifesText.text = lifes.CurrentLifes + " x " + lifes.maxLifes;
+        //lifesText.text = lifes.CurrentLifes + "-" + lifes.maxLifes;
+        lifesText.text = "x" + lifes.CurrentLifes;
     }
 
     public void UpdateScoreText(int quantity)

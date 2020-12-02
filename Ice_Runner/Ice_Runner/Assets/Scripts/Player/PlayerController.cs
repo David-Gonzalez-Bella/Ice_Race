@@ -88,6 +88,10 @@ public class PlayerController : MonoBehaviour
             UI_Manager.sharedInstance.UpdateScoreText(++score);
             Destroy(collision.gameObject);
         }
+        else if (collision.tag.CompareTo("Castle") == 0)
+        {
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
