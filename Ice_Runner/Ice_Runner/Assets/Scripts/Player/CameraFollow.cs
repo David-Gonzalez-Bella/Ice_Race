@@ -9,18 +9,17 @@ public class CameraFollow : MonoBehaviour
 
     //References
     public Transform player;
-    public Collider2D deadZoneHeight;
 
     //Camera follow
-    public float followOffset;
     public float xOffset;
     public float yOffset;
     private Vector3 camHeight;
     private Vector3 cameraPosition;
     private Vector3 tracking;
     private Vector3 camVel;
-    [SerializeField] private float dampTime = 1.0f;
-    public bool followPlayerY = false;
+    private float dampTime = 0.1f;
+    [HideInInspector] public float followOffset;
+    [HideInInspector] public bool followPlayerY = false;
 
     private void Awake()
     {

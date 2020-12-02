@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     //References
     protected Rigidbody2D rb;
-    protected SpriteRenderer sr;
+    [HideInInspector]public SpriteRenderer sr;
 
     private void Awake()
     {

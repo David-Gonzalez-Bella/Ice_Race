@@ -24,12 +24,14 @@ public class PlayerController : MonoBehaviour
     private int score = 0;
 
     //References
+    private SpriteRenderer spr;
     private Animator anim;
     private Rigidbody2D rb;
     private InputPlayer input;
 
     private void Awake()
     {
+        spr = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<InputPlayer>();
@@ -85,6 +87,27 @@ public class PlayerController : MonoBehaviour
         {
             UI_Manager.sharedInstance.UpdateScoreText(++score);
             Destroy(collision.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Collider2D collider = collision.collider;
+        if (collider.tag.CompareTo("Enemy") == 0)
+        {
+            GameObject enemy = collision.gameObject;
+            float otherSpriteOffset = enemy.GetComponent<Enemy_Basic>().sr.size.y / 4;
+            Vector3 contactPoint = collision.contacts[0].point; //Get the point of contact
+            Vector3 center = collider.bounds.center; //The center of the 2D sphere collider
+            if (contactPoint.y - spr.size.y / 2 > center.y + otherSpriteOffset)
+            {
+                Destroy(enemy);
+                rb.AddForce(Vector2.up * 100.0f, ForceMode2D.Impulse);
+            }
+            else
+            {
+                Debug.Log("Moririas");
+            }
         }
     }
 

@@ -6,7 +6,7 @@ public class CameraFollowTrigger : MonoBehaviour
 {
     public float followOffset;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.CompareTo("Player") == 0) //If the player exits the dead zone
         {
