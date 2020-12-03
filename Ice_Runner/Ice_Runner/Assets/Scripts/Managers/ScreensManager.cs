@@ -9,7 +9,11 @@ public class ScreensManager : MonoBehaviour
     public static ScreensManager sharedInstance { get; private set; }
 
     //References
-    public GameObject winScreen;
+    public GameObject[] screens;
+    //public GameObject mainMenu;
+    //public GameObject chooseSkinScreen;
+    //public GameObject chooseLevelScreen;
+    //public GameObject winScreen;
     public Text levelTime;
     public Text levelScore;
 
@@ -19,13 +23,13 @@ public class ScreensManager : MonoBehaviour
             sharedInstance = this;
     }
 
-    void Start()
+    public void EnableScreen(string screenName) //This method enables the screen we want, and disables all other screens
     {
-       // winScreen.SetActive(false);
-    }
-
-    void Update()
-    {
-        
+        bool screenActive;
+        for (int i = 0; i < screens.Length; i++)
+        {
+            screenActive = screens[i].name.CompareTo(screenName) == 0 ? true : false;
+            screens[i].SetActive(screenActive);
+        }
     }
 }

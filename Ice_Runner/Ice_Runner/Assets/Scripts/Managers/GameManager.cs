@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum gameState { mainMenu, inGame, deadScreen, leavingScreen, pauseScreen, winScreen }
+public enum gameState { mainMenu, chooseSkin, chooseLevel, inGame, winScreen }
 
 public class GameManager : MonoBehaviour
 {
@@ -22,14 +22,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        StartGame();
+        currentGameState = gameState.mainMenu;
+        ScreensManager.sharedInstance.EnableScreen("MainMenu");
         ScaleCamera();
     }
 
     public void StartGame()
     {
         currentGameState = gameState.inGame;
-        ScreensManager.sharedInstance.winScreen.SetActive(false);
+        //ScreensManager.sharedInstance.winScreen.SetActive(false);
         player.transform.position = GameObject.Find("PlayerStartPosition").transform.position;
         UnfreezePlayer();
     }
@@ -46,10 +47,27 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
+    public void GoToMainMenu()
+    {
+        currentGameState = gameState.mainMenu;
+        ScreensManager.sharedInstance.EnableScreen("MainMenu");
+    }
+
+    public void GoToChooseSkinScreen()
+    {
+        currentGameState = gameState.chooseSkin;
+        ScreensManager.sharedInstance.EnableScreen("ChooseSkinScreen");
+    }
+
+    public void GoToChooseLevelScreen()
+    {
+        currentGameState = gameState.chooseLevel;
+        ScreensManager.sharedInstance.EnableScreen("ChooseLevelScreen");
+    }
+
     public void GoToWinScreen(int playerScore, float playerTime)
     {
         FreezePlayer();
-        currentGameState = gameState.winScreen;
         StartCoroutine(EndLevel(playerScore, playerTime));
     }
 
@@ -66,10 +84,11 @@ public class GameManager : MonoBehaviour
     IEnumerator EndLevel(int playerScore, float playerTime)
     {
         yield return new WaitForSeconds(1.0f);
+        currentGameState = gameState.winScreen;
         UI_Manager.sharedInstance.countDownActive = false;
         UI_Manager.sharedInstance.inGameUI.SetActive(false);
-        ScreensManager.sharedInstance.winScreen.SetActive(true);
         ScreensManager.sharedInstance.levelScore.text = playerScore.ToString();
         ScreensManager.sharedInstance.levelTime.text = playerTime.ToString();
+        ScreensManager.sharedInstance.EnableScreen("WinScreen");
     }
 }
