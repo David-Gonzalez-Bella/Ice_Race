@@ -20,12 +20,15 @@ public class PlayerController : MonoBehaviour
     public LayerMask floorLayer;
     public LayerMask wallsLayer;
 
+    //Animarions
+    [HideInInspector]public int StopHashCode;
+
     //Score
     private int score = 0;
 
     //References
+    [HideInInspector] public Animator anim;
     private SpriteRenderer spr;
-    private Animator anim;
     private Rigidbody2D rb;
     private InputPlayer input;
 
@@ -35,6 +38,11 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<InputPlayer>();
+    }
+
+    private void Start()
+    {
+        StopHashCode = Animator.StringToHash("Stop");
     }
 
     private void Update()

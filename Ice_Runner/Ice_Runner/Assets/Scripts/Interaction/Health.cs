@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
 
         set
         {
-            if (value > maxLifes)
+            if (value >= maxLifes)
             {
                 currentLifes = maxLifes;
             }
@@ -29,7 +29,8 @@ public class Health : MonoBehaviour
             {
                 currentLifes = value;
             }
-            UpdateLifesText(); //Every time lifes are updated the UI will be updated as well
+            if(this.gameObject.tag.CompareTo("Player") == 0)
+                UpdateLifesText(); //Every time lifes are updated the UI will be updated as well
         }
     }
 

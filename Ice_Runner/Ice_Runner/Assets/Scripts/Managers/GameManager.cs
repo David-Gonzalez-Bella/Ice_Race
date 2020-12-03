@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void FreezePlayer()
     {
+        player.GetComponent<PlayerController>().anim.SetBool(player.GetComponent<PlayerController>().StopHashCode, true); //Stop player's idle animation
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndLevel(int playerScore, float playerTime)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         UI_Manager.sharedInstance.countDownActive = false;
         UI_Manager.sharedInstance.inGameUI.SetActive(false);
         ScreensManager.sharedInstance.winScreen.SetActive(true);
