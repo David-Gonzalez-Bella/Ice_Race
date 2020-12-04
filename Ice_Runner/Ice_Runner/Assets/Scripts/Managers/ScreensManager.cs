@@ -32,4 +32,9 @@ public class ScreensManager : MonoBehaviour
             screens[i].SetActive(screenActive);
         }
     }
+
+    public void DisableScreen(string screenName) //This method enables the screen we want, and disables all other screens
+    {
+
+    }
 }

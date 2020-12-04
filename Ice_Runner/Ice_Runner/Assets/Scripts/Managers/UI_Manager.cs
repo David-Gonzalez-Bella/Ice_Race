@@ -18,7 +18,7 @@ public class UI_Manager : MonoBehaviour
     public Text countDownText;
     public Text levelProgressPercentage;
     public Image levelProgressBar;
-    private Level_Info currentLevel;
+    [HideInInspector] public Level_Info currentLevel;
 
     private void Awake()
     {
@@ -28,33 +28,34 @@ public class UI_Manager : MonoBehaviour
 
     void Start()
     {
-        currentLevel = GameObject.FindGameObjectWithTag("Level").GetComponent<Level_Info>();
         UpdateScoreText(0);
     }
 
     void Update()
     {
-        levelProgressBar.fillAmount = GameManager.sharedInstance.player.transform.position.x / currentLevel.levelSize;
-        levelProgressPercentage.text = ((int)(levelProgressBar.fillAmount * 100)).ToString() + " %";
-
-        if(countDownActive)
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
         {
-            if(countDownTime > 0.0f)
+            levelProgressBar.fillAmount = GameManager.sharedInstance.player.transform.position.x / currentLevel.levelSize;
+            levelProgressPercentage.text = ((int)(levelProgressBar.fillAmount * 100)).ToString() + " %";
+
+            if (countDownActive)
             {
-                countDownTime -= Time.deltaTime;
+                if (countDownTime > 0.0f)
+                {
+                    countDownTime -= Time.deltaTime;
+                }
+                else
+                {
+                    countDownTime = 0.0f;
+                    countDownActive = false;
+                }
+                countDownText.text = (Math.Round(countDownTime, 2)).ToString();
             }
-            else
-            {
-                countDownTime = 0.0f;
-                countDownActive = false;
-            }
-            countDownText.text = (Math.Round(countDownTime, 2)).ToString();
         }
     }
 
     public void UpdateLifesText(Health lifes) //Update UI lifes text
     {
-        //lifesText.text = lifes.CurrentLifes + "-" + lifes.maxLifes;
         lifesText.text = "x" + lifes.CurrentLifes;
     }
 
