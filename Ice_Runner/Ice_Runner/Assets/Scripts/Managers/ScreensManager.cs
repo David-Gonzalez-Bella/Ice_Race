@@ -10,10 +10,7 @@ public class ScreensManager : MonoBehaviour
 
     //References
     public GameObject[] screens;
-    //public GameObject mainMenu;
-    //public GameObject chooseSkinScreen;
-    //public GameObject chooseLevelScreen;
-    //public GameObject winScreen;
+    public GameObject darkBackground;
     public Text levelTime;
     public Text levelScore;
 
@@ -23,18 +20,22 @@ public class ScreensManager : MonoBehaviour
             sharedInstance = this;
     }
 
-    public void EnableScreen(string screenName) //This method enables the screen we want, and disables all other screens
+    public void ShowSettings(bool settingsEnabled)
     {
-        bool screenActive;
-        for (int i = 0; i < screens.Length; i++)
-        {
-            screenActive = screens[i].name.CompareTo(screenName) == 0 ? true : false;
-            screens[i].SetActive(screenActive);
-        }
+        screens[7].SetActive(settingsEnabled);
     }
 
-    public void DisableScreen(string screenName) //This method enables the screen we want, and disables all other screens
+    public void EnableScreen(string screenName) //This method enables the screen we want, and disables all other screens
     {
-
+        //bool screenActive;
+        for (int i = 0; i < screens.Length; i++)
+        {
+            if(screens[i].name.CompareTo(screenName) == 0)
+                screens[i].SetActive(true);
+            else if(screens[i].activeSelf)
+                screens[i].SetActive(false);
+            //screenActive = screens[i].name.CompareTo(screenName) == 0 ? true : false;
+            //screens[i].SetActive(screenActive);
+        }
     }
 }

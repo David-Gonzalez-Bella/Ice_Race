@@ -13,14 +13,24 @@ public class Enemy : MonoBehaviour
     public float startMovePoint;
     public float endMovePoint;
 
+    //Animations
+    [HideInInspector] public int StopHashCode;
+
     //References
     protected Rigidbody2D rb;
+    [HideInInspector] public Animator anim;
     [HideInInspector]public SpriteRenderer sr;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        StopHashCode = Animator.StringToHash("Stop");
     }
 
     void Update()

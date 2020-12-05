@@ -6,12 +6,22 @@ public class CameraFollowTriggerWithExit : CameraFollowTrigger
 {
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        CameraFollow.sharedInstance.followPlayerY = true;
-        CameraFollow.sharedInstance.followOffset = followOffset;
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
+        {
+            if (collision.tag.CompareTo("Player") == 0)
+            {
+                CameraFollow.sharedInstance.followPlayerY = true;
+                CameraFollow.sharedInstance.followOffset = followOffset;
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        CameraFollow.sharedInstance.followPlayerY = false;
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
+        {
+            if (collision.tag.CompareTo("Player") == 0)
+                CameraFollow.sharedInstance.followPlayerY = false;
+        }
     }
 }

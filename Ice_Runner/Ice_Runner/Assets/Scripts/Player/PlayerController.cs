@@ -20,11 +20,11 @@ public class PlayerController : MonoBehaviour
     public LayerMask floorLayer;
     public LayerMask wallsLayer;
 
-    //Animarions
-    [HideInInspector]public int StopHashCode;
+    //Animations
+    [HideInInspector] public int StopHashCode;
 
     //Score
-    private int score = 0;
+    [HideInInspector] public int score = 0;
 
     //References
     [HideInInspector] public Animator anim;
@@ -86,34 +86,40 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.CompareTo("Coin") == 0) //If the player grabs a coin
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
         {
-            UI_Manager.sharedInstance.UpdateScoreText(++score);
-            Destroy(collision.gameObject);
-        }
-        else if (collision.tag.CompareTo("Castle") == 0)
-        {
-            GameManager.sharedInstance.GoToWinScreen(score, UI_Manager.sharedInstance.countDownTime);
+            if (collision.tag.CompareTo("Coin") == 0) //If the player grabs a coin
+            {
+                UI_Manager.sharedInstance.UpdateScoreText(++score);
+                Destroy(collision.gameObject);
+            }
+            else if (collision.tag.CompareTo("Castle") == 0)
+            {
+                GameManager.sharedInstance.GoToWinScreen(score, UI_Manager.sharedInstance.countDownTime);
+            }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Collider2D collider = collision.collider;
-        if (collider.tag.CompareTo("Enemy") == 0)
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
         {
-            GameObject enemy = collision.gameObject;
-            float otherSpriteOffset = enemy.GetComponent<Enemy_Basic>().sr.size.y / 4;
-            Vector3 contactPoint = collision.contacts[0].point; //Get the point of contact
-            Vector3 center = collider.bounds.center; //The center of the 2D sphere collider
-            if (contactPoint.y - spr.size.y / 2 > center.y + otherSpriteOffset)
+            Collider2D collider = collision.collider;
+            if (collider.tag.CompareTo("Enemy") == 0)
             {
-                Destroy(enemy);
-                rb.AddForce(Vector2.up * 100.0f, ForceMode2D.Impulse);
-            }
-            else
-            {
-                Debug.Log("Moririas");
+                GameObject enemy = collision.gameObject;
+                float otherSpriteOffset = enemy.GetComponent<Enemy_Basic>().sr.size.y / 4;
+                Vector3 contactPoint = collision.contacts[0].point; //Get the point of contact
+                Vector3 center = collider.bounds.center; //The center of the 2D sphere collider
+                if (contactPoint.y - spr.size.y / 2 > center.y + otherSpriteOffset)
+                {
+                    Destroy(enemy);
+                    rb.AddForce(Vector2.up * 100.0f, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    Debug.Log("Moririas");
+                }
             }
         }
     }

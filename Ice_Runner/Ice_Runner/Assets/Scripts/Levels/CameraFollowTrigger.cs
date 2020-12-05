@@ -8,10 +8,13 @@ public class CameraFollowTrigger : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.CompareTo("Player") == 0) //If the player exits the dead zone
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
         {
-            CameraFollow.sharedInstance.followPlayerY = !CameraFollow.sharedInstance.followPlayerY;
-            CameraFollow.sharedInstance.followOffset = followOffset;
+            if (collision.tag.CompareTo("Player") == 0) //If the player exits the dead zone
+            {
+                CameraFollow.sharedInstance.followPlayerY = !CameraFollow.sharedInstance.followPlayerY;
+                CameraFollow.sharedInstance.followOffset = followOffset;
+            }
         }
     }
 }
