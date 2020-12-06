@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Wilberforce;
 
-public enum gameState { mainMenu, controls, credits, chooseSkin, chooseLevel, inGame, settings, winScreen }
+public enum gameState { mainMenu, controls, credits, chooseSkin, chooseLevel, inGame, settings, winScreen, deadScreen }
 
 public class GameManager : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class GameManager : MonoBehaviour
     public static GameManager sharedInstance { get; private set; } //Singleton
     private gameState backgroundGameState;
     public gameState currentGameState = gameState.inGame;
-    private GameObject currentLevel;
+    [HideInInspector] public GameObject currentLevel;
     private int lastLevelIndex;
+    private bool colorblindMode = false;
 
     //References
     public GameObject player;
@@ -74,6 +76,7 @@ public class GameManager : MonoBehaviour
     {
         currentGameState = gameState.mainMenu;
         UI_Manager.sharedInstance.inGameUI.SetActive(false);
+        ScreensManager.sharedInstance.darkBackground.SetActive(false);
         ScreensManager.sharedInstance.EnableScreen("MainMenu");
         player.transform.position = Vector3.zero;
     }
@@ -105,7 +108,19 @@ public class GameManager : MonoBehaviour
     public void GoToWinScreen(int playerScore, float playerTime)
     {
         FreezePlayer();
-        StartCoroutine(EndLevel(playerScore, playerTime));
+        UI_Manager.sharedInstance.countDownActive = false;
+        ScreensManager.sharedInstance.levelScore.text = playerScore.ToString();
+        ScreensManager.sharedInstance.levelTime.text = playerTime.ToString();
+        ScreensManager.sharedInstance.EnableScreen("WinScreen");
+        currentGameState = gameState.winScreen;
+    }
+
+    public void GoToDeadScreen()
+    {
+        FreezePlayer();
+        UI_Manager.sharedInstance.countDownActive = false;
+        ScreensManager.sharedInstance.EnableScreen("DeadScreen");
+        currentGameState = gameState.deadScreen;
     }
 
     public void GoToSettingsScreen(bool settingsEnabled)
@@ -128,6 +143,10 @@ public class GameManager : MonoBehaviour
         ScreensManager.sharedInstance.ShowSettings(settingsEnabled);
     }
 
+    public void DestroyCurrentLevel()
+    {
+        Destroy(currentLevel);
+    }
 
     public void ExitGame()
     {
@@ -155,9 +174,11 @@ public class GameManager : MonoBehaviour
 
         //Set the player position to the level's start position
         player.transform.position = GameObject.Find("PlayerStartPosition").transform.position;
+        CameraFollow.sharedInstance.transform.position = player.transform.position;
 
         //We are now playing
-        StartCoroutine(PlayerReady()); //Give the camera some for the player to be positioned in the start position correctly
+        currentGameState = gameState.inGame;
+        UnfreezePlayer();
     }
 
     private void ScaleCamera()
@@ -169,6 +190,14 @@ public class GameManager : MonoBehaviour
         float DEVICE_SCREEN_ASPECT = srcWidth / srcHeight;
         mainCamera.aspect = DEVICE_SCREEN_ASPECT;
     }
+    
+    public void ColorBlindMode()
+    {
+        colorblindMode = !colorblindMode;
+        int mode = colorblindMode ? 1 : 0;
+        mainCamera.GetComponent<Colorblind>().Type = mode;
+    }
+
 
     private void ResetUI_Values()
     {
@@ -176,27 +205,5 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Health>().CurrentLifes = 3;
         UI_Manager.sharedInstance.countDownTime = 150.0f;
         UI_Manager.sharedInstance.countDownActive = true;
-    }
-
-
-    IEnumerator PlayerReady()
-    {
-        yield return new WaitForSeconds(0.0001f);
-        currentGameState = gameState.inGame;
-        UnfreezePlayer();
-
-    }
-
-    IEnumerator EndLevel(int playerScore, float playerTime)
-    {
-        UI_Manager.sharedInstance.countDownActive = false;
-        yield return new WaitForSeconds(0.5f);
-        currentGameState = gameState.winScreen;
-        UI_Manager.sharedInstance.inGameUI.SetActive(false);
-        ScreensManager.sharedInstance.levelScore.text = playerScore.ToString();
-        ScreensManager.sharedInstance.levelTime.text = playerTime.ToString();
-        ScreensManager.sharedInstance.EnableScreen("WinScreen");
-        Destroy(currentLevel);
-        CameraFollow.sharedInstance.transform.position = Vector3.zero; //Whenever we go back to the main menu we reset the camera position
     }
 }

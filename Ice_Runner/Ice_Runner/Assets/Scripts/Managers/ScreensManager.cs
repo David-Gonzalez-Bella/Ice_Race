@@ -34,8 +34,6 @@ public class ScreensManager : MonoBehaviour
                 screens[i].SetActive(true);
             else if(screens[i].activeSelf)
                 screens[i].SetActive(false);
-            //screenActive = screens[i].name.CompareTo(screenName) == 0 ? true : false;
-            //screens[i].SetActive(screenActive);
         }
     }
 }
