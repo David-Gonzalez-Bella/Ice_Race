@@ -11,6 +11,7 @@ public class ScreensManager : MonoBehaviour
     //References
     public GameObject[] screens;
     public GameObject darkBackground;
+    public TransitionFadeIn transitionAnim;
     public Text levelTime;
     public Text levelScore;
 
@@ -45,14 +46,28 @@ public class ScreensManager : MonoBehaviour
         screens[9].SetActive(settingsEnabled);
     }
 
+    public void StartTransitionAnim(string screenName)
+    {
+        transitionAnim.nextScreen = screenName;
+        transitionAnim.gameObject.SetActive(true);
+    }
+
+    public void HideAllScreens()
+    {
+        for (int i = 0; i < screens.Length; i++)
+        {
+            screens[i].SetActive(false);
+        }
+    }
+
     public void EnableScreen(string screenName) //This method enables the screen we want, and disables all other screens
     {
         //bool screenActive;
         for (int i = 0; i < screens.Length; i++)
         {
-            if(screens[i].name.CompareTo(screenName) == 0)
+            if (screens[i].name.CompareTo(screenName) == 0)
                 screens[i].SetActive(true);
-            else if(screens[i].activeSelf)
+            else if (screens[i].activeSelf)
                 screens[i].SetActive(false);
         }
     }

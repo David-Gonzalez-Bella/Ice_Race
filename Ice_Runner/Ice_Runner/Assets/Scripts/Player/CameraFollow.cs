@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour
     private float dampTime = 0.1f;
     [HideInInspector] public float followOffset;
     [HideInInspector] public bool followPlayerY = false;
-    [HideInInspector] public Transform limitStopFollow;
+    public Transform limitStopFollow;
 
     private void Awake()
     {
