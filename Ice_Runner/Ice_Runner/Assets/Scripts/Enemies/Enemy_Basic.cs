@@ -11,12 +11,12 @@ public class Enemy_Basic : Enemy
 
     protected override void Behaviour()
     {
-        if (rb.position.x >= endMovePoint)
+        if (rb.transform.localPosition.x >= endMovePoint)
         {
             direction = -1;
             sr.flipX = true;
         }
-        else if (rb.position.x <= startMovePoint)
+        else if (rb.transform.localPosition.x <= startMovePoint)
         {
             direction = 1;
             sr.flipX = false;

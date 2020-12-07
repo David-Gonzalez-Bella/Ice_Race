@@ -9,9 +9,13 @@ public class ScreensManager : MonoBehaviour
     public static ScreensManager sharedInstance { get; private set; }
 
     //References
-    public GameObject winScreen;
+    public GameObject[] screens;
+    public GameObject darkBackground;
     public Text levelTime;
     public Text levelScore;
+
+    public Text fpsText;
+    private float deltaTime;
 
     private void Awake()
     {
@@ -19,13 +23,37 @@ public class ScreensManager : MonoBehaviour
             sharedInstance = this;
     }
 
-    void Start()
-    {
-       // winScreen.SetActive(false);
-    }
-
     void Update()
     {
-        
+        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+        float fps = 1.0f / deltaTime;
+        fpsText.text = Mathf.Ceil(fps).ToString();
+    }
+
+    public void ShowSettings(bool settingsEnabled)
+    {
+        screens[7].SetActive(settingsEnabled);
+    }
+
+    public void ShowWannaLeaveMM(bool settingsEnabled)
+    {
+        screens[8].SetActive(settingsEnabled);
+    }
+
+    public void ShowWannaLeaveIG(bool settingsEnabled)
+    {
+        screens[9].SetActive(settingsEnabled);
+    }
+
+    public void EnableScreen(string screenName) //This method enables the screen we want, and disables all other screens
+    {
+        //bool screenActive;
+        for (int i = 0; i < screens.Length; i++)
+        {
+            if(screens[i].name.CompareTo(screenName) == 0)
+                screens[i].SetActive(true);
+            else if(screens[i].activeSelf)
+                screens[i].SetActive(false);
+        }
     }
 }

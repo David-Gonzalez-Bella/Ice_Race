@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour
     private float dampTime = 0.1f;
     [HideInInspector] public float followOffset;
     [HideInInspector] public bool followPlayerY = false;
-    private Transform limitStopFollow;
+    [HideInInspector] public Transform limitStopFollow;
 
     private void Awake()
     {
@@ -33,7 +33,6 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         camHeight = this.transform.position += Vector3.up * yOffset;
-        limitStopFollow = GameObject.Find("CameraStopFollow").transform;
     }
 
     void Update()
@@ -57,6 +56,7 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        this.transform.position = tracking;
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
+            this.transform.position = tracking;
     }
 }

@@ -1,18 +1,19 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioManager
+    - CameraFollow
+    - CameraFollowTriggerWithExit
     - Enemy_Basic
     - GameManager
     - Health
     - InputPlayer
+    - LastScreen
     - Level_Info
     - PlayerController
+    - ScreensManager
     - UI_Manager
-    Cinemachine.dll:
-    - Cinemachine.CinemachineBrain
-    - Cinemachine.CinemachineFramingTransposer
-    - Cinemachine.CinemachinePipeline
-    - Cinemachine.CinemachineVirtualCamera
+    - Wilberforce.Colorblind
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -45,6 +46,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -64,7 +66,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
-    - Class: 60
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 61
       Script: {instanceID: 0}
     - Class: 62
       Script: {instanceID: 0}
@@ -76,6 +80,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -83,51 +91,57 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 632}
+      Script: {instanceID: 630}
     - Class: 114
-      Script: {instanceID: 11870}
+      Script: {instanceID: 11852}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11876}
     - Class: 114
-      Script: {instanceID: 12204}
+      Script: {instanceID: 12186}
     - Class: 114
-      Script: {instanceID: 12268}
+      Script: {instanceID: 12250}
     - Class: 114
-      Script: {instanceID: 12308}
+      Script: {instanceID: 12290}
     - Class: 114
-      Script: {instanceID: 13020}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 13084}
+      Script: {instanceID: 12954}
     - Class: 114
-      Script: {instanceID: 13110}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 13070}
     - Class: 114
-      Script: {instanceID: 13554}
+      Script: {instanceID: 13074}
     - Class: 114
-      Script: {instanceID: 13686}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13876}
+      Script: {instanceID: 13542}
     - Class: 114
-      Script: {instanceID: 14292}
+      Script: {instanceID: 13864}
     - Class: 114
-      Script: {instanceID: 14314}
+      Script: {instanceID: 14280}
     - Class: 114
-      Script: {instanceID: 14390}
+      Script: {instanceID: 14302}
     - Class: 114
-      Script: {instanceID: 14600}
+      Script: {instanceID: 14588}
     - Class: 114
-      Script: {instanceID: 14708}
+      Script: {instanceID: 14696}
     - Class: 114
-      Script: {instanceID: 14796}
+      Script: {instanceID: 14766}
     - Class: 114
-      Script: {instanceID: 15108}
+      Script: {instanceID: 14786}
     - Class: 114
-      Script: {instanceID: 15146}
+      Script: {instanceID: 15076}
     - Class: 114
-      Script: {instanceID: 15410}
+      Script: {instanceID: 15100}
     - Class: 114
-      Script: {instanceID: 15468}
+      Script: {instanceID: 15138}
+    - Class: 114
+      Script: {instanceID: 15462}
+    - Class: 114
+      Script: {instanceID: 15512}
+    - Class: 114
+      Script: {instanceID: 15516}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -146,6 +160,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
     - Class: 19719996
       Script: {instanceID: 0}
     - Class: 156049354
@@ -163,7 +183,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: d7737a35547e661e540469ced76b87f3
+      Hash: ce4a56957db866c56fa730767ae0496a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -289,7 +309,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeController
   - hash:
       serializedVersion: 2
-      Hash: eb7baba1ee78343874b56d2c15bae762
+      Hash: 547f2a87299fc33e15694b2b1dad981e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_Manager
@@ -305,6 +325,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GridLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: d835e37be8caf473a0d64dc941f2a2a8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
   - hash:
       serializedVersion: 2
       Hash: 6dd3dc11942e98c0a809c81f95fc960c
@@ -433,6 +459,12 @@ ScriptsOnlyBuild:
     className: NoiseSettings
   - hash:
       serializedVersion: 2
+      Hash: e718c3d9113486509cd60c588fc52367
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScreensManager
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -469,6 +501,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: 3c3350a8e2563c38fb8b2ac9b513b94d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraFollowTriggerWithExit
+  - hash:
+      serializedVersion: 2
       Hash: 611bc970ee9dc090779a3fac6a18fac6
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -487,7 +525,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 817890442797e719b9b882b3bc10fce2
+      Hash: 79dcebd41333843bd316c61c89979d60
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy_Basic
@@ -601,7 +639,7 @@ ScriptsOnlyBuild:
     className: CinemachineTargetGroup
   - hash:
       serializedVersion: 2
-      Hash: 817890442797e719b9b882b3bc10fce2
+      Hash: 79dcebd41333843bd316c61c89979d60
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -775,7 +813,7 @@ ScriptsOnlyBuild:
     className: CinemachineVolumeSettings
   - hash:
       serializedVersion: 2
-      Hash: 18a3956c0be9a18a5a666e96855a292d
+      Hash: 475d52431fc99bf087cf162c559b05ad
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -785,6 +823,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LastScreen
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -829,6 +873,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: efdd1b41ee79ea13a319fc47cb7082fe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraFollow
+  - hash:
+      serializedVersion: 2
       Hash: 5e84370a36252d6aa37d6a7bd37710f7
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -845,6 +895,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Level_Info
+  - hash:
+      serializedVersion: 2
+      Hash: 3c3350a8e2563c38fb8b2ac9b513b94d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraFollowTrigger
   - hash:
       serializedVersion: 2
       Hash: a2612813f45d0ced02c3e4bc9dbea8b4
@@ -955,6 +1011,12 @@ ScriptsOnlyBuild:
     className: CinemachineClearShot
   - hash:
       serializedVersion: 2
+      Hash: 1001919edf5dfca4b2d3bd32974eac22
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Wilberforce
+    className: Colorblind
+  - hash:
+      serializedVersion: 2
       Hash: 0c05f2bfb402def3f0a85a62a2323c7f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -974,4 +1036,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/USUARIO/Desktop/Ice_Runner.exe
+  playerPath: D:/Unity/Ejecutables/Ice Race/Windows/Ice_Runner.exe
