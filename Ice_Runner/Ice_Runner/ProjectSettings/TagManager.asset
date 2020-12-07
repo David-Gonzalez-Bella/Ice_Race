@@ -9,6 +9,7 @@ TagManager:
   - DeadZone
   - Enemy
   - Castle
+  - CameraStopFollow
   layers:
   - Default
   - TransparentFX

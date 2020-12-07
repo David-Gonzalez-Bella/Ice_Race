@@ -38,10 +38,9 @@ public class GameManager : MonoBehaviour
         ScaleCamera();
     }
 
-    public void StartGame(int levelEndScreen)
+    public void StartGame()
     {
         InstantiateLevel(lastLevelIndex);
-        ScreensManager.sharedInstance.screens[levelEndScreen].SetActive(false); //Disable win sreen
     }
 
     public void FreezePlayer()
@@ -79,12 +78,16 @@ public class GameManager : MonoBehaviour
     public void GoToMainMenu()
     {
         if (GameObject.FindGameObjectWithTag("Level") != null)
+        {
             DestroyCurrentLevel();
+            UI_Manager.sharedInstance.inGameUI.SetActive(false);
+            ScreensManager.sharedInstance.darkBackground.SetActive(false);
+            player.transform.position = Vector3.zero;
+        }
+           
         currentGameState = gameState.mainMenu;
-        UI_Manager.sharedInstance.inGameUI.SetActive(false);
-        ScreensManager.sharedInstance.darkBackground.SetActive(false);
-        ScreensManager.sharedInstance.EnableScreen("MainMenu");
-        player.transform.position = Vector3.zero;
+        ScreensManager.sharedInstance.StartTransitionAnim("MainMenu");
+
     }
 
     public void GoToWannaLeaveMMScreen(bool screenEnabled)
@@ -101,43 +104,47 @@ public class GameManager : MonoBehaviour
     public void GoToControlsScreen()
     {
         currentGameState = gameState.controls;
-        ScreensManager.sharedInstance.EnableScreen("ControlsScreen");
+        ScreensManager.sharedInstance.StartTransitionAnim("ControlsScreen");
     }
 
     public void GoToCreditsScreen()
     {
         currentGameState = gameState.credits;
-        ScreensManager.sharedInstance.EnableScreen("CreditsScreen");
+        ScreensManager.sharedInstance.StartTransitionAnim("CreditsScreen");
     }
 
     public void GoToChooseSkinScreen()
     {
         currentGameState = gameState.chooseSkin;
-        ScreensManager.sharedInstance.EnableScreen("ChooseSkinScreen");
+        ScreensManager.sharedInstance.StartTransitionAnim("ChooseSkinScreen");
     }
 
     public void GoToChooseLevelScreen()
     {
         currentGameState = gameState.chooseLevel;
-        ScreensManager.sharedInstance.EnableScreen("ChooseLevelScreen");
+        ScreensManager.sharedInstance.StartTransitionAnim("ChooseLevelScreen");
     }
 
     public void GoToWinScreen(int playerScore, float playerTime)
     {
         FreezePlayer();
+        FreezeEnemies();
         UI_Manager.sharedInstance.countDownActive = false;
         ScreensManager.sharedInstance.levelScore.text = playerScore.ToString();
         ScreensManager.sharedInstance.levelTime.text = playerTime.ToString();
-        ScreensManager.sharedInstance.EnableScreen("WinScreen");
         currentGameState = gameState.winScreen;
+        ScreensManager.sharedInstance.StartTransitionAnim("WinScreen");
+        StartCoroutine(WaitToDestroyLevel());
     }
 
     public void GoToDeadScreen()
     {
         FreezePlayer();
+        FreezeEnemies();
         UI_Manager.sharedInstance.countDownActive = false;
-        ScreensManager.sharedInstance.EnableScreen("DeadScreen");
+        ScreensManager.sharedInstance.StartTransitionAnim("DeadScreen");
         currentGameState = gameState.deadScreen;
+        StartCoroutine(WaitToDestroyLevel());
     }
 
     public void GoToSettingsScreen(bool settingsEnabled)
@@ -163,7 +170,6 @@ public class GameManager : MonoBehaviour
     public void DestroyCurrentLevel()
     {
         Destroy(currentLevel);
-        UI_Manager.sharedInstance.inGameUI.SetActive(false);
     }
 
     public void ExitGame()
@@ -173,6 +179,9 @@ public class GameManager : MonoBehaviour
 
     public void InstantiateLevel(int levelIndex)
     {
+        //Transition animation
+        ScreensManager.sharedInstance.StartTransitionAnim("InGame");
+
         //Reset all values
         ResetUI_Values();
 
@@ -183,12 +192,9 @@ public class GameManager : MonoBehaviour
         currentLevel = Instantiate(levels[levelIndex], Vector3.zero, Quaternion.identity);
         UI_Manager.sharedInstance.inGameUI.SetActive(true); //Enable ingame UI
 
-        //Disable Choose Level Screen
-        ScreensManager.sharedInstance.screens[2].SetActive(false);
-
         //Find ingame level references
         UI_Manager.sharedInstance.currentLevel = GameObject.FindGameObjectWithTag("Level").GetComponent<Level_Info>();
-        CameraFollow.sharedInstance.limitStopFollow = GameObject.Find("CameraStopFollow").transform;
+        CameraFollow.sharedInstance.limitStopFollow = GameObject.FindGameObjectWithTag("CameraStopFollow").transform;
 
         //Set the player position to the level's start position
         player.transform.position = GameObject.Find("PlayerStartPosition").transform.position;
@@ -216,12 +222,19 @@ public class GameManager : MonoBehaviour
         mainCamera.GetComponent<Colorblind>().Type = mode;
     }
 
-
     private void ResetUI_Values()
     {
-        player.GetComponent<PlayerController>().score = 0;
+        player.GetComponent<PlayerController>().score = 0; //Reset values
         player.GetComponent<Health>().CurrentLifes = 3;
-        UI_Manager.sharedInstance.countDownTime = 150.0f;
+        UI_Manager.sharedInstance.UpdateLifesText(player.GetComponent<Health>()); //Update UI texts
+        UI_Manager.sharedInstance.UpdateScoreText(player.GetComponent<PlayerController>().score);
+        UI_Manager.sharedInstance.countDownTime = 150.0f; //Reset countdown
         UI_Manager.sharedInstance.countDownActive = true;
+    }
+
+    IEnumerator WaitToDestroyLevel()
+    {
+        yield return new WaitForSeconds(0.7f);
+        DestroyCurrentLevel();
     }
 }
