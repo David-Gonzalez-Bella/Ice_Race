@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        //Set the aplication framerate 
+        Application.targetFrameRate = 60;
+
+        //Go to main menu
         currentGameState = gameState.mainMenu;
         ScreensManager.sharedInstance.EnableScreen("MainMenu");
         FreezePlayer();
@@ -74,11 +78,24 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        if (GameObject.FindGameObjectWithTag("Level") != null)
+            DestroyCurrentLevel();
         currentGameState = gameState.mainMenu;
         UI_Manager.sharedInstance.inGameUI.SetActive(false);
         ScreensManager.sharedInstance.darkBackground.SetActive(false);
         ScreensManager.sharedInstance.EnableScreen("MainMenu");
         player.transform.position = Vector3.zero;
+    }
+
+    public void GoToWannaLeaveMMScreen(bool screenEnabled)
+    {
+        ScreensManager.sharedInstance.ShowWannaLeaveMM(screenEnabled);
+        ScreensManager.sharedInstance.darkBackground.SetActive(screenEnabled);
+    }
+
+    public void GoToWannaLeaveIGScreen(bool screenEnabled)
+    {
+        ScreensManager.sharedInstance.ShowWannaLeaveIG(screenEnabled);
     }
 
     public void GoToControlsScreen()
@@ -146,6 +163,7 @@ public class GameManager : MonoBehaviour
     public void DestroyCurrentLevel()
     {
         Destroy(currentLevel);
+        UI_Manager.sharedInstance.inGameUI.SetActive(false);
     }
 
     public void ExitGame()

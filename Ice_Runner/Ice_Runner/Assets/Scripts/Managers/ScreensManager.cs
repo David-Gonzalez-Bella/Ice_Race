@@ -14,15 +14,35 @@ public class ScreensManager : MonoBehaviour
     public Text levelTime;
     public Text levelScore;
 
+    public Text fpsText;
+    private float deltaTime;
+
     private void Awake()
     {
         if (sharedInstance == null)
             sharedInstance = this;
     }
 
+    void Update()
+    {
+        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+        float fps = 1.0f / deltaTime;
+        fpsText.text = Mathf.Ceil(fps).ToString();
+    }
+
     public void ShowSettings(bool settingsEnabled)
     {
         screens[7].SetActive(settingsEnabled);
+    }
+
+    public void ShowWannaLeaveMM(bool settingsEnabled)
+    {
+        screens[8].SetActive(settingsEnabled);
+    }
+
+    public void ShowWannaLeaveIG(bool settingsEnabled)
+    {
+        screens[9].SetActive(settingsEnabled);
     }
 
     public void EnableScreen(string screenName) //This method enables the screen we want, and disables all other screens
