@@ -8,18 +8,23 @@ ScriptsOnlyBuild:
     - GameManager
     - Health
     - InputPlayer
-    - LastScreen
     - Level_Info
     - PlayerController
     - ScreensManager
+    - TransitionFadeIn
     - UI_Manager
     - Wilberforce.Colorblind
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
+    - UnityEditor.Tilemaps.GridPaintPaletteClipboard
+    - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
+    - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -93,55 +98,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 630}
     - Class: 114
-      Script: {instanceID: 11852}
+      Script: {instanceID: 11866}
     - Class: 114
-      Script: {instanceID: 11876}
+      Script: {instanceID: 11890}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12200}
     - Class: 114
-      Script: {instanceID: 12250}
+      Script: {instanceID: 12264}
     - Class: 114
-      Script: {instanceID: 12290}
+      Script: {instanceID: 12304}
     - Class: 114
-      Script: {instanceID: 12370}
+      Script: {instanceID: 12384}
     - Class: 114
-      Script: {instanceID: 12954}
+      Script: {instanceID: 12968}
     - Class: 114
-      Script: {instanceID: 13006}
+      Script: {instanceID: 13020}
     - Class: 114
-      Script: {instanceID: 13070}
+      Script: {instanceID: 13084}
     - Class: 114
-      Script: {instanceID: 13074}
+      Script: {instanceID: 13088}
     - Class: 114
-      Script: {instanceID: 13132}
+      Script: {instanceID: 13146}
     - Class: 114
-      Script: {instanceID: 13542}
+      Script: {instanceID: 13556}
     - Class: 114
-      Script: {instanceID: 13864}
+      Script: {instanceID: 13878}
     - Class: 114
-      Script: {instanceID: 14280}
+      Script: {instanceID: 14294}
     - Class: 114
-      Script: {instanceID: 14302}
+      Script: {instanceID: 14316}
     - Class: 114
-      Script: {instanceID: 14588}
+      Script: {instanceID: 14602}
     - Class: 114
-      Script: {instanceID: 14696}
+      Script: {instanceID: 14710}
     - Class: 114
-      Script: {instanceID: 14766}
+      Script: {instanceID: 14798}
     - Class: 114
-      Script: {instanceID: 14786}
+      Script: {instanceID: 15088}
     - Class: 114
-      Script: {instanceID: 15076}
+      Script: {instanceID: 15112}
     - Class: 114
-      Script: {instanceID: 15100}
+      Script: {instanceID: 15150}
     - Class: 114
-      Script: {instanceID: 15138}
+      Script: {instanceID: 15474}
     - Class: 114
-      Script: {instanceID: 15462}
+      Script: {instanceID: 15524}
     - Class: 114
-      Script: {instanceID: 15512}
+      Script: {instanceID: 15528}
     - Class: 114
-      Script: {instanceID: 15516}
+      Script: {instanceID: 15610}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -459,7 +464,7 @@ ScriptsOnlyBuild:
     className: NoiseSettings
   - hash:
       serializedVersion: 2
-      Hash: fd1128baab09b24461cc5a8aec659d1c
+      Hash: 7d206c2dfe57614d33191039a3cb0825
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ScreensManager
@@ -825,12 +830,6 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LastScreen
-  - hash:
-      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1033,7 +1032,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 5c2683333fc2842cd4415eef3d8ec7ad
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TransitionFadeIn
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Unity/Ejecutables/Ice Race/Android/Almost all screens.apk
+  playerPath: F:/Uni/4/Gestion/Ice_Race/Ice_Runner/Ice_Runner/IceRunner.apk
