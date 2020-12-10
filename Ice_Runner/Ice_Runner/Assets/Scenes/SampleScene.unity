@@ -203,7 +203,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 22574240}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 366715120}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: InstantiateLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &22574240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1728,6 +1740,7 @@ MonoBehaviour:
   levels:
   - {fileID: 800602628337251311, guid: f0a41ea9fdc2aac4ea8e3b37df137af6, type: 3}
   - {fileID: 1003711872504789486, guid: 9823d660bdab9a14aaf98b2e66ad5def, type: 3}
+  - {fileID: 5666359242979604342, guid: eb1e71cb955f0794bb11bf08132c8430, type: 3}
 --- !u!4 &366715121
 Transform:
   m_ObjectHideFlags: 0
