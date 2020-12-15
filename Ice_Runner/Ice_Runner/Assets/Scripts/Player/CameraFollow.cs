@@ -15,6 +15,7 @@ public class CameraFollow : MonoBehaviour
     public float yOffset;
     private Vector3 camHeight;
     private Vector3 cameraPosition;
+    private Vector3 lastCameraPosition;
     private Vector3 tracking;
     private Vector3 camVel;
     private float dampTime = 0.1f;
@@ -37,7 +38,7 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.sharedInstance.currentGameState == gameState.inGame)
+        if (GameManager.sharedInstance.currentGameState == gameState.inGame && !player.GetComponent<PlayerController>().isDead)
         {
             if (limitStopFollow.position.x - player.position.x > 14)
             {
@@ -49,8 +50,13 @@ public class CameraFollow : MonoBehaviour
                 {
                     cameraPosition = new Vector3(player.position.x + xOffset, player.position.y - followOffset + yOffset, -10);
                 }
+                lastCameraPosition = cameraPosition;
                 tracking = Vector3.SmoothDamp(this.transform.position, cameraPosition, ref camVel, dampTime);
             }
+        }
+        else
+        {
+            tracking = Vector3.SmoothDamp(this.transform.position, lastCameraPosition, ref camVel, dampTime);
         }
     }
 

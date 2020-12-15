@@ -20,8 +20,12 @@ public class PlayerController : MonoBehaviour
     public LayerMask floorLayer;
     public LayerMask wallsLayer;
 
+    //State
+    [HideInInspector] public bool isDead = false;
+
     //Animations
     [HideInInspector] public int StopHashCode;
+    [HideInInspector] public int DieHashCode;
 
     //Score
     [HideInInspector] public int score = 0;
@@ -31,7 +35,9 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spr;
     private Rigidbody2D rb;
     private InputPlayer input;
+    private Collider2D col;
     private Health health;
+    [HideInInspector] public Level_Info currentLevel;
 
     private void Awake()
     {
@@ -39,12 +45,14 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<InputPlayer>();
+        col = GetComponent<Collider2D>();
         health = GetComponent<Health>();
     }
 
     private void Start()
     {
         StopHashCode = Animator.StringToHash("Stop");
+        DieHashCode = Animator.StringToHash("Die");
     }
 
     private void Update()
@@ -99,6 +107,11 @@ public class PlayerController : MonoBehaviour
             {
                 GameManager.sharedInstance.GoToWinScreen(score, UI_Manager.sharedInstance.countDownTime);
             }
+            else if (collision.tag.CompareTo("Spikes") == 0)
+            {
+                health.CurrentLifes--;
+                DieAnimation();
+            }
         }
     }
 
@@ -121,9 +134,16 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     health.CurrentLifes--;
+                    DieAnimation();
                 }
             }
         }
+    }
+
+    public void CheckDie()
+    {
+        ScreensManager.sharedInstance.transitionAnim.gameObject.SetActive(true);
+        StartCoroutine(RespawnTransitionCoroutine());
     }
 
     private void Jump()
@@ -151,6 +171,22 @@ public class PlayerController : MonoBehaviour
         wallJumpDirection.x *= -1;
     }
 
+    private void DieAnimation()
+    {
+        //GameManager.sharedInstance.mainCamera.transform.position = GameManager.sharedInstance.mainCamera.transform.position;
+        isDead = true;
+        GameManager.sharedInstance.FreezePlayer();
+        col.enabled = false;
+        anim.SetBool(DieHashCode, true);
+    }
+
+    public void SendToRespawnPoint()
+    {
+        GameManager.sharedInstance.UnfreezePlayer();
+        isDead = false;
+        transform.position = currentLevel.currentRespawnPoint.position;
+    }
+
     private bool isTouchingFloor() //We cast a ray from the player's position to check if it touches the floor layer
     {
         return Physics2D.Raycast(this.transform.position, Vector2.down, 0.5f, floorLayer) || Physics2D.Raycast(this.transform.position, Vector2.down, 0.5f, wallsLayer); //The secod conditions is for the case where we step on a wall
@@ -159,5 +195,22 @@ public class PlayerController : MonoBehaviour
     private bool isTouchingWall() //We cast a ray from the player's position to check if it touches the floor layer
     {
         return Physics2D.Raycast(this.transform.position, Vector2.left, 0.8f, wallsLayer) || Physics2D.Raycast(this.transform.position, Vector2.right, 0.8f, wallsLayer);
+    }
+
+    IEnumerator RespawnTransitionCoroutine()
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        col.enabled = true;
+        anim.SetBool(DieHashCode, false);
+
+        if (health.CurrentLifes > 0)
+        {
+            SendToRespawnPoint();
+        }
+        else
+        {
+            GameManager.sharedInstance.GoToDeadScreen();
+        }
     }
 }

@@ -62,7 +62,18 @@ public class ScreensManager : MonoBehaviour
 
     public void EnableScreen(string screenName) //This method enables the screen we want, and disables all other screens
     {
-        //bool screenActive;
+        if (screenName.CompareTo("MainMenu") == 0)
+        {
+            darkBackground.SetActive(false);
+
+            if (GameObject.FindGameObjectWithTag("Level") != null)
+            {
+                GameManager.sharedInstance.DestroyCurrentLevel();
+                //UI_Manager.sharedInstance.inGameUI.SetActive(false);
+                GameManager.sharedInstance.player.transform.position = Vector3.zero;
+            }
+        }
+
         for (int i = 0; i < screens.Length; i++)
         {
             if (screens[i].name.CompareTo(screenName) == 0)

@@ -77,17 +77,16 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        if (GameObject.FindGameObjectWithTag("Level") != null)
-        {
-            DestroyCurrentLevel();
-            UI_Manager.sharedInstance.inGameUI.SetActive(false);
-            ScreensManager.sharedInstance.darkBackground.SetActive(false);
-            player.transform.position = Vector3.zero;
-        }
-           
+        //if (GameObject.FindGameObjectWithTag("Level") != null)
+        //{
+        //    DestroyCurrentLevel();
+        //    UI_Manager.sharedInstance.inGameUI.SetActive(false);
+        //    ScreensManager.sharedInstance.darkBackground.SetActive(false);
+        //    player.transform.position = Vector3.zero;
+        //}
+
         currentGameState = gameState.mainMenu;
         ScreensManager.sharedInstance.StartTransitionAnim("MainMenu");
-
     }
 
     public void GoToWannaLeaveMMScreen(bool screenEnabled)
@@ -190,15 +189,19 @@ public class GameManager : MonoBehaviour
 
         //Instantiate level
         currentLevel = Instantiate(levels[levelIndex], Vector3.zero, Quaternion.identity);
-        UI_Manager.sharedInstance.inGameUI.SetActive(true); //Enable ingame UI
+        //UI_Manager.sharedInstance.inGameUI.SetActive(true); //Enable ingame UI
 
         //Find ingame level references
         UI_Manager.sharedInstance.currentLevel = GameObject.FindGameObjectWithTag("Level").GetComponent<Level_Info>();
         CameraFollow.sharedInstance.limitStopFollow = GameObject.FindGameObjectWithTag("CameraStopFollow").transform;
-
+        
         //Set the player position to the level's start position
         player.transform.position = GameObject.Find("PlayerStartPosition").transform.position;
         CameraFollow.sharedInstance.transform.position = player.transform.position;
+
+        //Set the player's initial variables so that a level can commence
+        player.GetComponent<PlayerController>().isDead = false;
+        player.GetComponent<PlayerController>().currentLevel = currentLevel.GetComponent<Level_Info>();
 
         //We are now playing
         currentGameState = gameState.inGame;

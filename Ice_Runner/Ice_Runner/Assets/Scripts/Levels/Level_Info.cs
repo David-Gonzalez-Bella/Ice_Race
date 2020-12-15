@@ -11,8 +11,13 @@ public class Level_Info : MonoBehaviour
     public Transform startPoint;
     public Transform endPoint;
 
+    [HideInInspector] public Transform currentRespawnPoint;
+    public Transform[] respawnPoints;
+
+
     void Start()
     {
+        currentRespawnPoint = respawnPoints[0];
         levelSize = endPoint.position.x - startPoint.position.x;
     }
 }

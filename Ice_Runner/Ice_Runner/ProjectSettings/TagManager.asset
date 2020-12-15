@@ -11,6 +11,7 @@ TagManager:
   - Castle
   - CameraStopFollow
   - Spikes
+  - RespawnPoint
   layers:
   - Default
   - TransparentFX
