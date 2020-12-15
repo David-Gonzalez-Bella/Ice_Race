@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spr;
     private Rigidbody2D rb;
     private InputPlayer input;
+    private Health health;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<InputPlayer>();
+        health = GetComponent<Health>();
     }
 
     private void Start()
@@ -118,7 +120,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Moririas");
+                    health.CurrentLifes--;
                 }
             }
         }
