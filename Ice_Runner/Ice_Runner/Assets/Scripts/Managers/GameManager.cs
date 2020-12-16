@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Set the aplication framerate 
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 30;
 
         //Go to main menu
         currentGameState = gameState.mainMenu;
