@@ -211,7 +211,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1738,8 +1738,10 @@ MonoBehaviour:
   player: {fileID: 244481560}
   mainCamera: {fileID: 519420031}
   levels:
+  - {fileID: 829589852965527762, guid: 23e136ac950cb7742b1d967ad78ee251, type: 3}
   - {fileID: 800602628337251311, guid: f0a41ea9fdc2aac4ea8e3b37df137af6, type: 3}
   - {fileID: 1003711872504789486, guid: 9823d660bdab9a14aaf98b2e66ad5def, type: 3}
+  - {fileID: 2806182226478749874, guid: eff654053e9119043bf4170273267afc, type: 3}
   - {fileID: 5666359242979604342, guid: 3280ceec8997ca547bc8a8fc3c73f8be, type: 3}
 --- !u!4 &366715121
 Transform:
@@ -2124,7 +2126,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2378,7 +2380,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 460737020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 366715120}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: InstantiateLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &460737020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4329,7 +4343,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8769,7 +8783,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -9061,7 +9075,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1688351618}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 366715120}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: InstantiateLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1688351618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10210,6 +10236,10 @@ PrefabInstance:
     - target: {fileID: 3123063898444390504, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: wallJumpForce
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3123063898444390508, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
       propertyPath: m_LocalPosition.x

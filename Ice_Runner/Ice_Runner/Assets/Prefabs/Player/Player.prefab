@@ -90,8 +90,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0397988, y: 0.020398743}
-  m_Size: {x: 1.2699245, y: 0.9344218}
+  m_Offset: {x: -0.034340028, y: 0.008116548}
+  m_Size: {x: 1.1552941, y: 0.82252574}
   m_Direction: 1
 --- !u!114 &3123063898444390506
 MonoBehaviour:
@@ -123,13 +123,21 @@ MonoBehaviour:
   xSpeed: 5.5
   jumpForceBasic: 115
   jumpForceIncrement: 400
-  wallJumpForce: 110
+  wallJumpForce: 120
+  downBreak: 0
+  finalWallJumpForce: 0
   floorLayer:
     serializedVersion: 2
     m_Bits: 256
   wallsLayer:
     serializedVersion: 2
     m_Bits: 512
+  isDead: 0
+  StopHashCode: 0
+  DieHashCode: 0
+  score: 0
+  anim: {fileID: 0}
+  currentLevel: {fileID: 0}
 --- !u!114 &3123063898444390511
 MonoBehaviour:
   m_ObjectHideFlags: 0

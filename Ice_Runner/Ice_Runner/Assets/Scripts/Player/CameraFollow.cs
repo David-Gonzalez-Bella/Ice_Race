@@ -56,8 +56,13 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            tracking = Vector3.SmoothDamp(this.transform.position, lastCameraPosition, ref camVel, dampTime);
+            tracking = Vector3.SmoothDamp(this.transform.position, lastCameraPosition, ref camVel, dampTime); //Frezze camera position in the place where the player died
         }
+    }
+
+    public void ChangeYOffset(float newOffset)
+    {
+        yOffset = newOffset;
     }
 
     private void FixedUpdate()

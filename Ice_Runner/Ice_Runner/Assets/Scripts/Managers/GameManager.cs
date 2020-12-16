@@ -77,14 +77,6 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        //if (GameObject.FindGameObjectWithTag("Level") != null)
-        //{
-        //    DestroyCurrentLevel();
-        //    UI_Manager.sharedInstance.inGameUI.SetActive(false);
-        //    ScreensManager.sharedInstance.darkBackground.SetActive(false);
-        //    player.transform.position = Vector3.zero;
-        //}
-
         currentGameState = gameState.mainMenu;
         ScreensManager.sharedInstance.StartTransitionAnim("MainMenu");
     }

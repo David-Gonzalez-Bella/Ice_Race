@@ -8,15 +8,17 @@ public class PlayerController : MonoBehaviour
 {
     //Variables
     //Movement
-    public float xSpeed = 5.5f;
-    public float jumpForceBasic = 115.0f;
-    public float jumpForceIncrement = 400.0f;
+    public float xSpeed;// = 5.5f;
+    public float jumpForceBasic;// = 115.0f;
+    public float jumpForceIncrement;// = 400.0f;
     private bool isJumping = false;
     private float jumpTime = 0.15f;
     private float jumpTimeCounter;
     private bool wallJumping = false;
-    public float wallJumpForce = 112.0f;
-    private Vector2 wallJumpDirection = new Vector2(-1.0f, 1.2f);
+    public float wallJumpForce;// = 110.0f;
+    public float downBreak;
+    public float finalWallJumpForce;
+    private Vector2 wallJumpDirection = new Vector2(-1.2f, 1.2f);
     public LayerMask floorLayer;
     public LayerMask wallsLayer;
 
@@ -57,6 +59,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        downBreak = rb.velocity.y;
+
         //Jumping
         if (input.basicJump && isTouchingFloor())//Cuando se presione espacio se salta
         {
@@ -167,13 +171,13 @@ public class PlayerController : MonoBehaviour
     private void WallJump()
     {
         wallJumping = true;
-        rb.AddForce(wallJumpDirection * wallJumpForce, ForceMode2D.Impulse);
+        finalWallJumpForce = rb.velocity.y > 0 ? wallJumpForce : wallJumpForce + (rb.velocity.y * (Physics2D.gravity.y * rb.gravityScale));
+        rb.AddForce(wallJumpDirection * new Vector2(wallJumpForce, finalWallJumpForce), ForceMode2D.Impulse);
         wallJumpDirection.x *= -1;
     }
 
     private void DieAnimation()
     {
-        //GameManager.sharedInstance.mainCamera.transform.position = GameManager.sharedInstance.mainCamera.transform.position;
         isDead = true;
         GameManager.sharedInstance.FreezePlayer();
         col.enabled = false;
