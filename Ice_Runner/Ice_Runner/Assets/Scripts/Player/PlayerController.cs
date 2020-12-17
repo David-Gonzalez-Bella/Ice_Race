@@ -16,8 +16,7 @@ public class PlayerController : MonoBehaviour
     private float jumpTimeCounter;
     private bool wallJumping = false;
     public float wallJumpForce;// = 110.0f;
-    public float downBreak;
-    public float finalWallJumpForce;
+    private float finalWallJumpForce;
     private Vector2 wallJumpDirection = new Vector2(-1.2f, 1.2f);
     public LayerMask floorLayer;
     public LayerMask wallsLayer;
@@ -59,8 +58,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        downBreak = rb.velocity.y;
-
         //Jumping
         if (input.basicJump && isTouchingFloor())//Cuando se presione espacio se salta
         {
