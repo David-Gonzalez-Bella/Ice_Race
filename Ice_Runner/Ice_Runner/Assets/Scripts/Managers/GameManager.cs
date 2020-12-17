@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Wilberforce;
 
 public enum gameState { mainMenu, controls, credits, chooseSkin, chooseLevel, inGame, settings, winScreen, deadScreen }
 
@@ -208,13 +207,6 @@ public class GameManager : MonoBehaviour
 
         float DEVICE_SCREEN_ASPECT = srcWidth / srcHeight;
         mainCamera.aspect = DEVICE_SCREEN_ASPECT;
-    }
-    
-    public void ColorBlindMode()
-    {
-        colorblindMode = !colorblindMode;
-        int mode = colorblindMode ? 1 : 0;
-        mainCamera.GetComponent<Colorblind>().Type = mode;
     }
 
     private void ResetUI_Values()
