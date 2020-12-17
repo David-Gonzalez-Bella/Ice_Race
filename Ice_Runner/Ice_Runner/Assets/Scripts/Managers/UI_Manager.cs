@@ -18,7 +18,6 @@ public class UI_Manager : MonoBehaviour
     public Text countDownText;
     public Text levelProgressPercentage;
     public Image levelProgressBar;
-    public Slider volumeBar;
     public Button pauseButton;
     [HideInInspector] public Level_Info currentLevel;
 

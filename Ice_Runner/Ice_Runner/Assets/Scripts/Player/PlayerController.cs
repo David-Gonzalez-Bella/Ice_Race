@@ -99,8 +99,10 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.sharedInstance.currentGameState == gameState.inGame)
         {
+            AudioManager audioManager = AudioManager.sharedInstance;
             if (collision.tag.CompareTo("Coin") == 0) //If the player grabs a coin
             {
+                audioManager.OnCoinPicked += audioManager.PickCoin;
                 UI_Manager.sharedInstance.UpdateScoreText(++score);
                 Destroy(collision.gameObject);
             }
@@ -150,6 +152,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        PlayJumpAudio();
         rb.AddForce(Vector2.up * jumpForceBasic, ForceMode2D.Impulse);
     }
 
@@ -188,6 +191,11 @@ public class PlayerController : MonoBehaviour
         isDead = false;
         GameManager.sharedInstance.UnfreezePlayer();
         transform.position = currentLevel.currentRespawnPoint.position;
+    }
+
+    private void PlayJumpAudio()
+    {
+        AudioManager.sharedInstance.playerJump.Play();
     }
 
     private bool isTouchingFloor() //We cast a ray from the player's position to check if it touches the floor layer

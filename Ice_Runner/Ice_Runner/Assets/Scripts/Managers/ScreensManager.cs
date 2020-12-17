@@ -14,8 +14,9 @@ public class ScreensManager : MonoBehaviour
     public TransitionFadeIn transitionAnim;
     public Text levelTime;
     public Text levelScore;
-
     public Text fpsText;
+    public Slider mainThemeVolumeBar;
+    public Slider sfxVolumeBar;
     private float deltaTime;
 
     private void Awake()
