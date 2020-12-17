@@ -60,6 +60,11 @@ public class ScreensManager : MonoBehaviour
         }
     }
 
+    public void DisableButton(Button button)
+    {
+        button.interactable = false;
+    }
+
     public void EnableScreen(string screenName) //This method enables the screen we want, and disables all other screens
     {
         if (screenName.CompareTo("MainMenu") == 0)

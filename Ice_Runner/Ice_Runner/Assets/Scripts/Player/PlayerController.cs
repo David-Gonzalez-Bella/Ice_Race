@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask wallsLayer;
 
     //State
-    [HideInInspector] public bool isDead = false;
+    public bool isDead = false;
 
     //Animations
     [HideInInspector] public int StopHashCode;
@@ -111,6 +111,7 @@ public class PlayerController : MonoBehaviour
             else if (collision.tag.CompareTo("Spikes") == 0)
             {
                 health.CurrentLifes--;
+                UI_Manager.sharedInstance.pauseButton.interactable = false;
                 DieAnimation();
             }
         }
@@ -176,6 +177,7 @@ public class PlayerController : MonoBehaviour
     private void DieAnimation()
     {
         isDead = true;
+        StartCoroutine(PauseButtonInteractable());
         GameManager.sharedInstance.FreezePlayer();
         col.enabled = false;
         anim.SetBool(DieHashCode, true);
@@ -183,8 +185,8 @@ public class PlayerController : MonoBehaviour
 
     public void SendToRespawnPoint()
     {
-        GameManager.sharedInstance.UnfreezePlayer();
         isDead = false;
+        GameManager.sharedInstance.UnfreezePlayer();
         transform.position = currentLevel.currentRespawnPoint.position;
     }
 
@@ -214,4 +216,11 @@ public class PlayerController : MonoBehaviour
             GameManager.sharedInstance.GoToDeadScreen();
         }
     }
-}
+
+    IEnumerator PauseButtonInteractable()
+    {
+        UI_Manager.sharedInstance.pauseButton.interactable = false;
+        yield return new WaitForSeconds(3.0f);
+        UI_Manager.sharedInstance.pauseButton.interactable = true;
+    }
+ }

@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         player.GetComponent<PlayerController>().anim.SetBool(player.GetComponent<PlayerController>().StopHashCode, true); //Stop player's idle animation
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
     }
 
     public void UnfreezePlayer()
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void FreezeEnemies()
     {
-        foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             enemy.GetComponent<Enemy>().anim.SetBool(enemy.GetComponent<Enemy>().StopHashCode, true); //Stop player's idle animation
             enemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
@@ -185,7 +186,7 @@ public class GameManager : MonoBehaviour
         //Find ingame level references
         UI_Manager.sharedInstance.currentLevel = GameObject.FindGameObjectWithTag("Level").GetComponent<Level_Info>();
         CameraFollow.sharedInstance.limitStopFollow = GameObject.FindGameObjectWithTag("CameraStopFollow").transform;
-        
+
         //Set the player position to the level's start position
         player.transform.position = GameObject.Find("PlayerStartPosition").transform.position;
         CameraFollow.sharedInstance.transform.position = player.transform.position;
