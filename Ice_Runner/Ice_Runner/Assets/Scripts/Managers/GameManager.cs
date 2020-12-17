@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
 
         //Instantiate level
         currentLevel = Instantiate(levels[levelIndex], Vector3.zero, Quaternion.identity);
-        //UI_Manager.sharedInstance.inGameUI.SetActive(true); //Enable ingame UI
+        UI_Manager.sharedInstance.pauseButton.interactable = true; //Enable pause button UI
 
         //Find ingame level references
         UI_Manager.sharedInstance.currentLevel = GameObject.FindGameObjectWithTag("Level").GetComponent<Level_Info>();

@@ -36,6 +36,11 @@ public class ScreensManager : MonoBehaviour
         screens[7].SetActive(settingsEnabled);
     }
 
+    public void EnableButtonBack(Button button)
+    {
+        button.interactable = !button.interactable;
+    }
+
     public void ShowWannaLeaveMM(bool settingsEnabled)
     {
         screens[8].SetActive(settingsEnabled);
@@ -62,7 +67,7 @@ public class ScreensManager : MonoBehaviour
 
     public void DisableButton(Button button)
     {
-        button.interactable = false;
+        StartCoroutine(ButtonInteractable(button));
     }
 
     public void EnableScreen(string screenName) //This method enables the screen we want, and disables all other screens
@@ -74,7 +79,6 @@ public class ScreensManager : MonoBehaviour
             if (GameObject.FindGameObjectWithTag("Level") != null)
             {
                 GameManager.sharedInstance.DestroyCurrentLevel();
-                //UI_Manager.sharedInstance.inGameUI.SetActive(false);
                 GameManager.sharedInstance.player.transform.position = Vector3.zero;
             }
         }
@@ -86,5 +90,12 @@ public class ScreensManager : MonoBehaviour
             else if (screens[i].activeSelf)
                 screens[i].SetActive(false);
         }
+    }
+
+    IEnumerator ButtonInteractable(Button button)
+    {
+        button.interactable = false;
+        yield return new WaitForSeconds(1.5f);
+        button.interactable = true;
     }
 }
