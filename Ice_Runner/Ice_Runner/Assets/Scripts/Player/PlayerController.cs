@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Jumping
-        if (input.basicJump && isTouchingFloor())//Cuando se presione espacio se salta
+        if (input.basicJump && isTouchingFloor() && !isDead)//Cuando se presione espacio se salta
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
             AudioManager audioManager = AudioManager.sharedInstance;
             if (collision.tag.CompareTo("Coin") == 0) //If the player grabs a coin
             {
-                audioManager.OnCoinPicked += audioManager.PickCoin;
+                audioManager.OnCoinPicked_snd += audioManager.PickCoinSND;
                 UI_Manager.sharedInstance.UpdateScoreText(++score);
                 Destroy(collision.gameObject);
             }
@@ -123,6 +123,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.sharedInstance.currentGameState == gameState.inGame)
         {
+            AudioManager audioManager = AudioManager.sharedInstance;
             Collider2D collider = collision.collider;
             if (collider.tag.CompareTo("Enemy") == 0)
             {
@@ -134,6 +135,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Destroy(enemy);
                     rb.AddForce(Vector2.up * 100.0f, ForceMode2D.Impulse);
+                    audioManager.OnEnemyDie_snd += audioManager.EnemyDieSND;
                 }
                 else
                 {
@@ -148,6 +150,15 @@ public class PlayerController : MonoBehaviour
     {
         ScreensManager.sharedInstance.transitionAnim.gameObject.SetActive(true);
         StartCoroutine(RespawnTransitionCoroutine());
+    }
+
+    public void StopJumping()
+    {
+        if (GameManager.sharedInstance.backgroundGameState == gameState.inGame)
+        {
+            wallJumping = false;
+            isJumping = false;
+        }
     }
 
     private void Jump()
@@ -171,15 +182,17 @@ public class PlayerController : MonoBehaviour
 
     private void WallJump()
     {
+        PlayJumpAudio();
         wallJumping = true;
         finalWallJumpForce = rb.velocity.y > 0 ? wallJumpForce : wallJumpForce + (rb.velocity.y * (Physics2D.gravity.y * rb.gravityScale));
         rb.AddForce(wallJumpDirection * new Vector2(wallJumpForce, finalWallJumpForce), ForceMode2D.Impulse);
         wallJumpDirection.x *= -1;
     }
 
-    private void DieAnimation()
+    public void DieAnimation()
     {
         isDead = true;
+        PlayHurtAudio();
         StartCoroutine(PauseButtonInteractable());
         GameManager.sharedInstance.FreezePlayer();
         col.enabled = false;
@@ -193,9 +206,15 @@ public class PlayerController : MonoBehaviour
         transform.position = currentLevel.currentRespawnPoint.position;
     }
 
+    //Audio events call
     private void PlayJumpAudio()
     {
-        AudioManager.sharedInstance.playerJump.Play();
+        AudioManager.sharedInstance.playerJump_SFX.Play();
+    }
+
+    private void PlayHurtAudio()
+    {
+        AudioManager.sharedInstance.playerHurt_SFX.Play();
     }
 
     private bool isTouchingFloor() //We cast a ray from the player's position to check if it touches the floor layer
@@ -215,13 +234,13 @@ public class PlayerController : MonoBehaviour
         col.enabled = true;
         anim.SetBool(DieHashCode, false);
 
-        if (health.CurrentLifes > 0)
+        if (health.CurrentLifes <= 0 || !UI_Manager.sharedInstance.countDownActive)
         {
-            SendToRespawnPoint();
+            GameManager.sharedInstance.GoToDeadScreen();
         }
         else
         {
-            GameManager.sharedInstance.GoToDeadScreen();
+            SendToRespawnPoint();
         }
     }
 

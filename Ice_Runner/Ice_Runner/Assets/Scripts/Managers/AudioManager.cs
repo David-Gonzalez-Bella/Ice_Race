@@ -13,12 +13,29 @@ public class AudioManager : MonoBehaviour
     public AudioMixer mainThemeAudioMixer;
     public AudioMixer sfxAudioMixer;
 
-    //Audios
-    public AudioSource coinPicked;
-    public AudioSource playerJump;
+    //Audio - Themes
+    public AudioSource[] mainThemes;
+    //public AudioSource menus_MUSIC;
+    //public AudioSource levels_0_to_3_MUSIC;
+    //public AudioSource levels_4_to_7_MUSIC;
+    //public AudioSource levels_8_to_9_MUSIC;
+    //public AudioSource level_10_MUSIC;
+
+    //Audio - SFX
+    public AudioSource coinPicked_SFX;
+    public AudioSource playerJump_SFX;
+    public AudioSource checkPoint_SFX;
+    public AudioSource winCheers_SFX;
+    public AudioSource enemyDie_SFX;
+    public AudioSource gameOver_SFX;
+    public AudioSource buttonPressed_SFX;
+    public AudioSource playerHurt_SFX;
 
     //Events
-    public event Action OnCoinPicked; //Observer pattern
+    public event Action OnCoinPicked_snd; //Observer pattern
+    public event Action OnCheckPoint_snd;
+    public event Action OnEnemyDie_snd;
+    public event Action OnButtonPressed_snd;
 
     private void Awake()
     {
@@ -37,9 +54,13 @@ public class AudioManager : MonoBehaviour
 
     public void Update()
     {
-        OnCoinPicked?.Invoke();
+        OnCoinPicked_snd?.Invoke();
+        OnCheckPoint_snd?.Invoke();
+        OnEnemyDie_snd?.Invoke();
+        OnButtonPressed_snd?.Invoke();
     }
 
+    //Volume bars functions
     public void SetMainThemeVolume(float volume)
     {
         mainThemeAudioMixer.SetFloat("MainVolume", Mathf.Log10(volume) * 20); //We have to convert float to db, and that is done with the logarithm and *20 operation
@@ -61,9 +82,46 @@ public class AudioManager : MonoBehaviour
         sfxAudioMixer.SetFloat("SFX_Volume", Mathf.Log10(0.0001f) * 20); //We have to convert float to db, and that is done with the logarithm and *20 operation
     }
 
-    public void PickCoin()
+    //SFX events add functions
+    public void ButtonPressedEvent()
     {
-        coinPicked.Play();
-        OnCoinPicked -= PickCoin;
+        OnButtonPressed_snd += ButtonPressedSND;
+    }
+
+    //Themes play functions
+    public void PlayMainTheme(int themeIndex)
+    {
+        for(int i = 0; i < mainThemes.Length; i++)
+        {
+            if (i == themeIndex)
+                mainThemes[i].Play();
+            else
+                mainThemes[i].Stop();
+        }
+    }
+
+    //SFX play functions
+    public void PickCoinSND()
+    {
+        coinPicked_SFX.Play();
+        OnCoinPicked_snd -= PickCoinSND;
+    }
+
+    public void CheckPointSND()
+    {
+        checkPoint_SFX.Play();
+        OnCheckPoint_snd -= CheckPointSND;
+    }
+
+    public void EnemyDieSND()
+    {
+        enemyDie_SFX.Play();
+        OnEnemyDie_snd -= EnemyDieSND;
+    }
+
+    public void ButtonPressedSND()
+    {
+        buttonPressed_SFX.Play();
+        OnButtonPressed_snd -= ButtonPressedSND;
     }
 }

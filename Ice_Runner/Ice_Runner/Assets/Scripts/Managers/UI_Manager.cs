@@ -8,8 +8,8 @@ public class UI_Manager : MonoBehaviour
 {
     //Variables
     public static UI_Manager sharedInstance { get; private set; } //Singleton
-    public float countDownTime;
     public bool countDownActive = true;
+    [HideInInspector] public float countDownTime = 150.0f;
 
     //References
     public GameObject inGameUI;
@@ -49,6 +49,7 @@ public class UI_Manager : MonoBehaviour
                 {
                     countDownTime = 0.0f;
                     countDownActive = false;
+                    GameManager.sharedInstance.player.GetComponent<PlayerController>().DieAnimation();
                 }
                 countDownText.text = (Math.Round(countDownTime, 2)).ToString();
             }

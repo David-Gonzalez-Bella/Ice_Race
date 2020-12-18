@@ -13,6 +13,7 @@ public class RespawnPoint : MonoBehaviour
         {
             if (collision.tag.CompareTo("Player") == 0)
             {
+                AudioManager.sharedInstance.OnCheckPoint_snd += AudioManager.sharedInstance.CheckPointSND;
                 player = collision.GetComponent<PlayerController>();
                 player.currentLevel.currentRespawnPoint = player.currentLevel.respawnPoints[index];
 

@@ -8,11 +8,10 @@ public class GameManager : MonoBehaviour
 {
     //Variables
     public static GameManager sharedInstance { get; private set; } //Singleton
-    private gameState backgroundGameState;
+    public gameState backgroundGameState;
     public gameState currentGameState = gameState.inGame;
     [HideInInspector] public GameObject currentLevel;
     private int lastLevelIndex;
-    private bool colorblindMode = false;
 
     //References
     public GameObject player;
@@ -77,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        AudioManager.sharedInstance.PlayMainTheme(0);
         currentGameState = gameState.mainMenu;
         ScreensManager.sharedInstance.StartTransitionAnim("MainMenu");
     }
@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
     {
         FreezePlayer();
         FreezeEnemies();
+        PlayWinSound();
         UI_Manager.sharedInstance.countDownActive = false;
         ScreensManager.sharedInstance.levelScore.text = playerScore.ToString();
         ScreensManager.sharedInstance.levelTime.text = playerTime.ToString();
@@ -132,6 +133,7 @@ public class GameManager : MonoBehaviour
     {
         FreezePlayer();
         FreezeEnemies();
+        PlayGameOverSound();
         UI_Manager.sharedInstance.countDownActive = false;
         ScreensManager.sharedInstance.StartTransitionAnim("DeadScreen");
         currentGameState = gameState.deadScreen;
@@ -218,6 +220,16 @@ public class GameManager : MonoBehaviour
         UI_Manager.sharedInstance.UpdateScoreText(player.GetComponent<PlayerController>().score);
         UI_Manager.sharedInstance.countDownTime = 150.0f; //Reset countdown
         UI_Manager.sharedInstance.countDownActive = true;
+    }
+
+    private void PlayWinSound()
+    {
+        AudioManager.sharedInstance.winCheers_SFX.Play();
+    }
+
+    private void PlayGameOverSound()
+    {
+        AudioManager.sharedInstance.gameOver_SFX.Play();
     }
 
     IEnumerator WaitToDestroyLevel()
