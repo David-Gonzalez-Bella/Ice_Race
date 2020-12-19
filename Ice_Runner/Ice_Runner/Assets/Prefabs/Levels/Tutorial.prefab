@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 367177800839015205}
   - component: {fileID: 723592302197537933}
   m_Layer: 0
-  m_Name: cartel06
+  m_Name: InfoPanel_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,7 +222,8 @@ MonoBehaviour:
   startPoint: {fileID: 2931369521595881285}
   endPoint: {fileID: 8381751540215265164}
   currentRespawnPoint: {fileID: 0}
-  respawnPoints: []
+  respawnPoints:
+  - {fileID: 534263847982061658}
 --- !u!1 &1975172109227365273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,7 +1745,7 @@ GameObject:
   - component: {fileID: 5114874887285890323}
   - component: {fileID: 264234835531897319}
   m_Layer: 0
-  m_Name: cartel05
+  m_Name: InfoPanel_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2081,7 +2082,7 @@ GameObject:
   - component: {fileID: 5570390539207769296}
   - component: {fileID: 3128301302757712597}
   m_Layer: 0
-  m_Name: cartel04
+  m_Name: InfoPanel_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2192,7 +2193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1599522045883496006}
   m_Layer: 0
-  m_Name: carteles
+  m_Name: InfoPanels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2261,7 +2262,7 @@ GameObject:
   - component: {fileID: 570928934710445453}
   - component: {fileID: 2823197759333571918}
   m_Layer: 0
-  m_Name: cartel01
+  m_Name: InfoPanel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2343,7 +2344,7 @@ GameObject:
   - component: {fileID: 2979402146016538519}
   - component: {fileID: 5016079116547619257}
   m_Layer: 0
-  m_Name: cartel02
+  m_Name: InfoPanel_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2425,7 +2426,7 @@ GameObject:
   - component: {fileID: 4309603331104819768}
   - component: {fileID: 1121524200881415161}
   m_Layer: 0
-  m_Name: cartel03
+  m_Name: InfoPanel_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
