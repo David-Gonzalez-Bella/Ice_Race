@@ -9,7 +9,7 @@ public class ScreensManager : MonoBehaviour
     public static ScreensManager sharedInstance { get; private set; }
 
     //References
-    public Image skinSelected;
+    public Image skinSelected; //Screen manager has all skins previews
     public Sprite[] penguinSkins;
     public GameObject[] screens;
     public GameObject darkBackground;
