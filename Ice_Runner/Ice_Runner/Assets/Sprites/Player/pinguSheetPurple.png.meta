@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: d95573c96c4184b4bb9cd223237f055d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6828971420056461154
+    second: pinguSheetPurple_0
+  - first:
+      213: -2232056718222682119
+    second: pinguSheetPurple_1
+  - first:
+      213: -612927740175540028
+    second: pinguSheetPurple_2
+  - first:
+      213: 591373152381217288
+    second: pinguSheetPurple_3
+  - first:
+      213: 3523410718341255920
+    second: pinguSheetPurple_4
+  - first:
+      213: -3773517382259087518
+    second: pinguSheetPurple_5
+  - first:
+      213: -3567172262325321593
+    second: pinguSheetPurple_6
+  - first:
+      213: -1260137327495736136
+    second: pinguSheetPurple_7
+  - first:
+      213: -6771916326299948751
+    second: pinguSheetPurple_8
+  - first:
+      213: 3067152829857924152
+    second: pinguSheetPurple_9
+  - first:
+      213: -3530697342349904605
+    second: pinguSheetPurple_10
+  - first:
+      213: -8215801615434561261
+    second: pinguSheetPurple_11
+  - first:
+      213: -3324081197176963448
+    second: pinguSheetPurple_12
+  - first:
+      213: 9220159432711859385
+    second: pinguSheetPurple_13
+  - first:
+      213: 854205020304721874
+    second: pinguSheetPurple_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +77,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +86,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 640
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -66,7 +111,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -75,7 +144,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pinguSheetPurple_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e906d36ccae9a31a0800000000000000
+      internalID: -6828971420056461154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_1
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f710df9d342601e0800000000000000
+      internalID: -2232056718222682119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_2
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0aaddb7717e77f0800000000000000
+      internalID: -612927740175540028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_3
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80aa265bfbaf43800800000000000000
+      internalID: 591373152381217288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_4
+      rect:
+        serializedVersion: 2
+        x: 3632
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2d888616ba5e030800000000000000
+      internalID: 3523410718341255920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_5
+      rect:
+        serializedVersion: 2
+        x: 4540
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2676fac0fe5c1abc0800000000000000
+      internalID: -3773517382259087518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_6
+      rect:
+        serializedVersion: 2
+        x: 5448
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78009732abbde7ec0800000000000000
+      internalID: -3567172262325321593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_7
+      rect:
+        serializedVersion: 2
+        x: 6356
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b41862f6c7138ee0800000000000000
+      internalID: -1260137327495736136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_8
+      rect:
+        serializedVersion: 2
+        x: 7264
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139293afaf15502a0800000000000000
+      internalID: -6771916326299948751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_9
+      rect:
+        serializedVersion: 2
+        x: 8172
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834048f8f37b09a20800000000000000
+      internalID: 3067152829857924152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_10
+      rect:
+        serializedVersion: 2
+        x: 9080
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32571db3971700fc0800000000000000
+      internalID: -3530697342349904605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_11
+      rect:
+        serializedVersion: 2
+        x: 9988
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31941feb5fb9bfd80800000000000000
+      internalID: -8215801615434561261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_12
+      rect:
+        serializedVersion: 2
+        x: 10896
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e36bd43cd7ed1d0800000000000000
+      internalID: -3324081197176963448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_13
+      rect:
+        serializedVersion: 2
+        x: 11804
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bce14f472694ff70800000000000000
+      internalID: 9220159432711859385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetPurple_14
+      rect:
+        serializedVersion: 2
+        x: 12712
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d74e90b0febadb00800000000000000
+      internalID: 854205020304721874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

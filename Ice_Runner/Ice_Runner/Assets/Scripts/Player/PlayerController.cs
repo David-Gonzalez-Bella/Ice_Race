@@ -23,17 +23,20 @@ public class PlayerController : MonoBehaviour
 
     //State
     public bool isDead = false;
+    public int skinIndex = 0;
 
     //Animations
     [HideInInspector] public int StopHashCode;
     [HideInInspector] public int DieHashCode;
+    public AnimatorOverrideController [] overrideAnimation;
 
     //Score
     [HideInInspector] public int score = 0;
 
     //References
+    public Sprite[] penguinSkins;
     [HideInInspector] public Animator anim;
-    private SpriteRenderer spr;
+    [HideInInspector] public SpriteRenderer spr;
     private Rigidbody2D rb;
     private InputPlayer input;
     private Collider2D col;
@@ -144,6 +147,17 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetSkin(int quantity)
+    {
+        skinIndex += quantity;
+        if (quantity > 0)
+            skinIndex = skinIndex < penguinSkins.Length ? skinIndex++ : 0;
+        else
+            skinIndex = skinIndex >= 0 ? skinIndex-- : penguinSkins.Length - 1;
+        anim.runtimeAnimatorController = overrideAnimation[skinIndex] as RuntimeAnimatorController;
+        ScreensManager.sharedInstance.skinSelected.sprite = penguinSkins[skinIndex];
     }
 
     public void CheckDie()

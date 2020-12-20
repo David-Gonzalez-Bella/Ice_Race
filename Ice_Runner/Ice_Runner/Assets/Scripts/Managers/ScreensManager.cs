@@ -9,6 +9,7 @@ public class ScreensManager : MonoBehaviour
     public static ScreensManager sharedInstance { get; private set; }
 
     //References
+    public Image skinSelected;
     public GameObject[] screens;
     public GameObject darkBackground;
     public TransitionFadeIn transitionAnim;

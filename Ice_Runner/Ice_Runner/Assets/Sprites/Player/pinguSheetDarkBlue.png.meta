@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: e7bfd8688b471ec43ac4c94f8f4d2bf3
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7854459186640250030
+    second: pinguSheetDarkBlue_0
+  - first:
+      213: 4445480256024694103
+    second: pinguSheetDarkBlue_1
+  - first:
+      213: -7690204856120144740
+    second: pinguSheetDarkBlue_2
+  - first:
+      213: -2102733073769532997
+    second: pinguSheetDarkBlue_3
+  - first:
+      213: 2574632628981149828
+    second: pinguSheetDarkBlue_4
+  - first:
+      213: 3052747198603240664
+    second: pinguSheetDarkBlue_5
+  - first:
+      213: 7589592737370869244
+    second: pinguSheetDarkBlue_6
+  - first:
+      213: -5085225704013288589
+    second: pinguSheetDarkBlue_7
+  - first:
+      213: -5553839775517869474
+    second: pinguSheetDarkBlue_8
+  - first:
+      213: -3501920301140640907
+    second: pinguSheetDarkBlue_9
+  - first:
+      213: -2153151752855313186
+    second: pinguSheetDarkBlue_10
+  - first:
+      213: -5311646497520819803
+    second: pinguSheetDarkBlue_11
+  - first:
+      213: 5272745283122743238
+    second: pinguSheetDarkBlue_12
+  - first:
+      213: 7862855694272156544
+    second: pinguSheetDarkBlue_13
+  - first:
+      213: -4120377015228291949
+    second: pinguSheetDarkBlue_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +77,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +86,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 640
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -66,7 +111,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -75,7 +144,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4ee7af305a00d60800000000000000
+      internalID: 7854459186640250030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_1
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d4d5c5db481bd30800000000000000
+      internalID: 4445480256024694103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_2
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c89f48d67e64590800000000000000
+      internalID: -7690204856120144740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_3
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb17080096791d2e0800000000000000
+      internalID: -2102733073769532997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_4
+      rect:
+        serializedVersion: 2
+        x: 3632
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4803d8d2cbeeab320800000000000000
+      internalID: 2574632628981149828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_5
+      rect:
+        serializedVersion: 2
+        x: 4540
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4a0d927698d5a20800000000000000
+      internalID: 3052747198603240664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_6
+      rect:
+        serializedVersion: 2
+        x: 5448
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd00ec1266a35960800000000000000
+      internalID: 7589592737370869244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_7
+      rect:
+        serializedVersion: 2
+        x: 6356
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b2a953a26ad69b0800000000000000
+      internalID: -5085225704013288589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_8
+      rect:
+        serializedVersion: 2
+        x: 7264
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a72d0562ccce2b0800000000000000
+      internalID: -5553839775517869474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_9
+      rect:
+        serializedVersion: 2
+        x: 8172
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b78c24a0ea66fc0800000000000000
+      internalID: -3501920301140640907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_10
+      rect:
+        serializedVersion: 2
+        x: 9080
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4ac8f73e77e12e0800000000000000
+      internalID: -2153151752855313186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_11
+      rect:
+        serializedVersion: 2
+        x: 9988
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1e2de17ad3946b0800000000000000
+      internalID: -5311646497520819803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_12
+      rect:
+        serializedVersion: 2
+        x: 10896
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7c5a716ed8c2940800000000000000
+      internalID: 5272745283122743238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_13
+      rect:
+        serializedVersion: 2
+        x: 11804
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083df3148997e1d60800000000000000
+      internalID: 7862855694272156544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetDarkBlue_14
+      rect:
+        serializedVersion: 2
+        x: 12712
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39422a27fea71d6c0800000000000000
+      internalID: -4120377015228291949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

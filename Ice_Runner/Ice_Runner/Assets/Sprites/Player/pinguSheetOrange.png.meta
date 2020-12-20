@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: 0e7f4e5bc7c3e214cacbfe55feaba0f0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 727124496898997423
+    second: pinguSheetOrange_0
+  - first:
+      213: -3300597356583887882
+    second: pinguSheetOrange_1
+  - first:
+      213: 1592781882792622915
+    second: pinguSheetOrange_2
+  - first:
+      213: -8066146025069952275
+    second: pinguSheetOrange_3
+  - first:
+      213: 764136383494769747
+    second: pinguSheetOrange_4
+  - first:
+      213: 5594697910028894581
+    second: pinguSheetOrange_5
+  - first:
+      213: -2123928494111840253
+    second: pinguSheetOrange_6
+  - first:
+      213: -8467453299977058534
+    second: pinguSheetOrange_7
+  - first:
+      213: 9213019160954971393
+    second: pinguSheetOrange_8
+  - first:
+      213: -6274314119314443313
+    second: pinguSheetOrange_9
+  - first:
+      213: -4903550317274569255
+    second: pinguSheetOrange_10
+  - first:
+      213: -1333729002722835377
+    second: pinguSheetOrange_11
+  - first:
+      213: 3923235471296360583
+    second: pinguSheetOrange_12
+  - first:
+      213: -4560980046858092918
+    second: pinguSheetOrange_13
+  - first:
+      213: 2377867806046194244
+    second: pinguSheetOrange_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +77,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,12 +86,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 640
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -66,7 +111,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -75,7 +144,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pinguSheetOrange_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac3621a0e3471a00800000000000000
+      internalID: 727124496898997423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_1
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb5936013ce132d0800000000000000
+      internalID: -3300597356583887882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_2
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b3888fea2ba1610800000000000000
+      internalID: 1592781882792622915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_3
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2c64d2dea4f0090800000000000000
+      internalID: -8066146025069952275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_4
+      rect:
+        serializedVersion: 2
+        x: 3632
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c48220ef1ca9a00800000000000000
+      internalID: 764136383494769747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_5
+      rect:
+        serializedVersion: 2
+        x: 4540
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57184e07b1c54ad40800000000000000
+      internalID: 5594697910028894581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_6
+      rect:
+        serializedVersion: 2
+        x: 5448
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3082224a94a4682e0800000000000000
+      internalID: -2123928494111840253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_7
+      rect:
+        serializedVersion: 2
+        x: 6356
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1788ae06109d7a80800000000000000
+      internalID: -8467453299977058534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_8
+      rect:
+        serializedVersion: 2
+        x: 7264
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105a69d3d183bdf70800000000000000
+      internalID: 9213019160954971393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_9
+      rect:
+        serializedVersion: 2
+        x: 8172
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc37b0d1d882de8a0800000000000000
+      internalID: -6274314119314443313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_10
+      rect:
+        serializedVersion: 2
+        x: 9080
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5689077f613fbb0800000000000000
+      internalID: -4903550317274569255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_11
+      rect:
+        serializedVersion: 2
+        x: 9988
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44c116d984ad7de0800000000000000
+      internalID: -1333729002722835377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_12
+      rect:
+        serializedVersion: 2
+        x: 10896
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780f4dcffd1227630800000000000000
+      internalID: 3923235471296360583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_13
+      rect:
+        serializedVersion: 2
+        x: 11804
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ef06fffc424b0c0800000000000000
+      internalID: -4560980046858092918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinguSheetOrange_14
+      rect:
+        serializedVersion: 2
+        x: 12712
+        y: 0
+        width: 908
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a883ecb22eff020800000000000000
+      internalID: 2377867806046194244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
         AudioManager.sharedInstance.PlayMainTheme(0);
         currentGameState = gameState.mainMenu;
         ScreensManager.sharedInstance.StartTransitionAnim("MainMenu");
+        player.GetComponent<Animator>().runtimeAnimatorController = player.GetComponent<PlayerController>().overrideAnimation[0] as RuntimeAnimatorController;
     }
 
     public void GoToWannaLeaveMMScreen(bool screenEnabled)
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
     public void GoToChooseSkinScreen()
     {
         currentGameState = gameState.chooseSkin;
+        ScreensManager.sharedInstance.skinSelected.sprite = player.GetComponent<PlayerController>().penguinSkins[0];
         ScreensManager.sharedInstance.StartTransitionAnim("ChooseSkinScreen");
     }
 
