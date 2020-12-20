@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     public void GoToChooseSkinScreen()
     {
         currentGameState = gameState.chooseSkin;
-        ScreensManager.sharedInstance.skinSelected.sprite = player.GetComponent<PlayerController>().penguinSkins[0];
+        ScreensManager.sharedInstance.SetPreviewSkin(0);
         ScreensManager.sharedInstance.StartTransitionAnim("ChooseSkinScreen");
     }
 

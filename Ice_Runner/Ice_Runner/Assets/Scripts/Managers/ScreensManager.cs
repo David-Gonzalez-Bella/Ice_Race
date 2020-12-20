@@ -10,6 +10,7 @@ public class ScreensManager : MonoBehaviour
 
     //References
     public Image skinSelected;
+    public Sprite[] penguinSkins;
     public GameObject[] screens;
     public GameObject darkBackground;
     public TransitionFadeIn transitionAnim;
@@ -92,6 +93,11 @@ public class ScreensManager : MonoBehaviour
             else if (screens[i].activeSelf)
                 screens[i].SetActive(false);
         }
+    }
+
+    public void SetPreviewSkin(int spriteIndex)
+    {
+        skinSelected.sprite = penguinSkins[spriteIndex];
     }
 
     IEnumerator ButtonInteractable(Button button)

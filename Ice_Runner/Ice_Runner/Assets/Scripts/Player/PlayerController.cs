@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public int score = 0;
 
     //References
-    public Sprite[] penguinSkins;
     [HideInInspector] public Animator anim;
     [HideInInspector] public SpriteRenderer spr;
     private Rigidbody2D rb;
@@ -151,13 +150,14 @@ public class PlayerController : MonoBehaviour
 
     public void SetSkin(int quantity)
     {
+        ScreensManager srm = ScreensManager.sharedInstance;
         skinIndex += quantity;
         if (quantity > 0)
-            skinIndex = skinIndex < penguinSkins.Length ? skinIndex++ : 0;
+            skinIndex = skinIndex < srm.penguinSkins.Length ? skinIndex++ : 0;
         else
-            skinIndex = skinIndex >= 0 ? skinIndex-- : penguinSkins.Length - 1;
+            skinIndex = skinIndex >= 0 ? skinIndex-- : srm.penguinSkins.Length - 1;
         anim.runtimeAnimatorController = overrideAnimation[skinIndex] as RuntimeAnimatorController;
-        ScreensManager.sharedInstance.skinSelected.sprite = penguinSkins[skinIndex];
+        srm.SetPreviewSkin(skinIndex);
     }
 
     public void CheckDie()
