@@ -163,6 +163,7 @@ public class PlayerController : MonoBehaviour
     public void CheckDie()
     {
         ScreensManager.sharedInstance.transitionAnim.gameObject.SetActive(true);
+        anim.SetBool(StopHashCode, true);
         StartCoroutine(RespawnTransitionCoroutine());
     }
 

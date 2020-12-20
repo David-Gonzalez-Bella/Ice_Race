@@ -197,6 +197,7 @@ public class GameManager : MonoBehaviour
 
         //Set the player's initial variables so that a level can commence
         player.GetComponent<PlayerController>().isDead = false;
+        player.GetComponent<Animator>().SetBool(player.GetComponent<PlayerController>().StopHashCode, true);
         player.GetComponent<PlayerController>().currentLevel = currentLevel.GetComponent<Level_Info>();
 
         //We are now playing
