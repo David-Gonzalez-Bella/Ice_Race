@@ -4499,7 +4499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &635926429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7241,7 +7241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1113523907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13628,6 +13628,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
       propertyPath: wallJumpForce
       value: 120
       objectReference: {fileID: 0}
@@ -13711,6 +13715,46 @@ PrefabInstance:
       propertyPath: overrideAnimation.Array.data[9]
       value: 
       objectReference: {fileID: 22100000, guid: 55c79ef4a265b804b8f2af83f6a1e639, type: 2}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[0]
+      value: 
+      objectReference: {fileID: 99628642531627899, guid: 58b459df7a3d4c24eabfbe23dda6ec04, type: 3}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[1]
+      value: 
+      objectReference: {fileID: 7590704252677758840, guid: 06f6dbe9d42f362498d6ef667e22070b, type: 3}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[2]
+      value: 
+      objectReference: {fileID: 3052747198603240664, guid: e7bfd8688b471ec43ac4c94f8f4d2bf3, type: 3}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[3]
+      value: 
+      objectReference: {fileID: -9112773716180623606, guid: e7f9d91c7e953f84ab251dde134da38f, type: 3}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[4]
+      value: 
+      objectReference: {fileID: 7957275786641558610, guid: 9c79c508b254bdd49a5b93ba5e11c5ad, type: 3}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[5]
+      value: 
+      objectReference: {fileID: -9083819979254261480, guid: f7b55f18bc7cbc841adc473cc999b02d, type: 3}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[6]
+      value: 
+      objectReference: {fileID: 5594697910028894581, guid: 0e7f4e5bc7c3e214cacbfe55feaba0f0, type: 3}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[7]
+      value: 
+      objectReference: {fileID: -828626497354344444, guid: b80afd6b6dec5644c8ba4bef6678605f, type: 3}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[8]
+      value: 
+      objectReference: {fileID: 3444452953733185976, guid: ebeb3e9e54c64334f8f7c7e2af6402f9, type: 3}
+    - target: {fileID: 3123063898444390505, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
+      propertyPath: inGameSkins.Array.data[9]
+      value: 
+      objectReference: {fileID: -3773517382259087518, guid: d95573c96c4184b4bb9cd223237f055d, type: 3}
     - target: {fileID: 3123063898444390508, guid: dd42d982ae4900848b938f43462f7d51, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

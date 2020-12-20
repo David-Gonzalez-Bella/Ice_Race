@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
     public int skinIndex = 0;
 
     //Animations
-    [HideInInspector] public int StopHashCode;
     [HideInInspector] public int DieHashCode;
     public AnimatorOverrideController [] overrideAnimation;
 
@@ -54,7 +53,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        StopHashCode = Animator.StringToHash("Stop");
         DieHashCode = Animator.StringToHash("Die");
     }
 
@@ -162,8 +160,9 @@ public class PlayerController : MonoBehaviour
 
     public void CheckDie()
     {
+        GameManager.sharedInstance.FreezePlayer();
         ScreensManager.sharedInstance.transitionAnim.gameObject.SetActive(true);
-        anim.SetBool(StopHashCode, true);
+        anim.speed = 0;
         StartCoroutine(RespawnTransitionCoroutine());
     }
 
@@ -208,8 +207,8 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         PlayHurtAudio();
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         StartCoroutine(PauseButtonInteractable());
-        GameManager.sharedInstance.FreezePlayer();
         col.enabled = false;
         anim.SetBool(DieHashCode, true);
     }

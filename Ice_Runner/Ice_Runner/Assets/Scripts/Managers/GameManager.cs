@@ -43,14 +43,13 @@ public class GameManager : MonoBehaviour
 
     public void FreezePlayer()
     {
-        player.GetComponent<PlayerController>().anim.SetBool(player.GetComponent<PlayerController>().StopHashCode, true); //Stop player's idle animation
+        player.GetComponent<Animator>().speed = 0;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-
     }
 
     public void UnfreezePlayer()
     {
-        player.GetComponent<PlayerController>().anim.SetBool(player.GetComponent<PlayerController>().StopHashCode, false); //Start player's idle animation
+        player.GetComponent<Animator>().speed = 1; //Resume player's animation
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
@@ -59,7 +58,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
-            enemy.GetComponent<Enemy>().anim.SetBool(enemy.GetComponent<Enemy>().StopHashCode, true); //Stop player's idle animation
+            enemy.GetComponent<Animator>().speed = 0; //Stop enemy's idle animation
             enemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
@@ -68,7 +67,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
-            enemy.GetComponent<Enemy>().anim.SetBool(enemy.GetComponent<Enemy>().StopHashCode, false); //Start player's idle animation
+            enemy.GetComponent<Animator>().speed = 1; //Resume enemy's idle animation
             enemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             enemy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
@@ -80,6 +79,7 @@ public class GameManager : MonoBehaviour
         currentGameState = gameState.mainMenu;
         ScreensManager.sharedInstance.StartTransitionAnim("MainMenu");
         player.GetComponent<Animator>().runtimeAnimatorController = player.GetComponent<PlayerController>().overrideAnimation[0] as RuntimeAnimatorController;
+        player.GetComponent<Animator>().speed = 0;
     }
 
     public void GoToWannaLeaveMMScreen(bool screenEnabled)
@@ -197,7 +197,6 @@ public class GameManager : MonoBehaviour
 
         //Set the player's initial variables so that a level can commence
         player.GetComponent<PlayerController>().isDead = false;
-        player.GetComponent<Animator>().SetBool(player.GetComponent<PlayerController>().StopHashCode, true);
         player.GetComponent<PlayerController>().currentLevel = currentLevel.GetComponent<Level_Info>();
 
         //We are now playing
