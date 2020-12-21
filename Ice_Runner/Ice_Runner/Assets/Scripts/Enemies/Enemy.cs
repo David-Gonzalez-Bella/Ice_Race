@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof(Health))]
+[RequireComponent(typeof(Health))]
 
 public class Enemy : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     //References
     protected Rigidbody2D rb;
     [HideInInspector] public Animator anim;
-    [HideInInspector]public SpriteRenderer sr;
+    [HideInInspector] public SpriteRenderer sr;
 
     private void Awake()
     {

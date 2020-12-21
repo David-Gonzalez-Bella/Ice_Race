@@ -98,7 +98,7 @@ public class ScreensManager : MonoBehaviour
     public void SetPreviewSkin(int spriteIndex)
     {
         skinSelected.sprite = penguinSkins[spriteIndex];
-        
+
     }
 
     IEnumerator ButtonInteractable(Button button)
@@ -108,3 +108,4 @@ public class ScreensManager : MonoBehaviour
         button.interactable = true;
     }
 }
+
