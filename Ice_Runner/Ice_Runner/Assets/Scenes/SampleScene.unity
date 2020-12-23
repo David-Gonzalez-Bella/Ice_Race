@@ -2243,7 +2243,7 @@ MonoBehaviour:
   - {fileID: 4632011019954019359, guid: 90124294ba96e6f4fb605b7767f3f681, type: 3}
   - {fileID: 0}
   - {fileID: 5666359242979604342, guid: 3280ceec8997ca547bc8a8fc3c73f8be, type: 3}
-  - {fileID: 0}
+  - {fileID: 1854727956551326141, guid: a042d0b5349509840be4659c0619237b, type: 3}
   - {fileID: 0}
 --- !u!4 &366715121
 Transform:
