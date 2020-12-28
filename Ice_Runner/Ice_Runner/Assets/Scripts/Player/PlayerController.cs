@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Jumping
-        if (input.basicJump && isTouchingFloor() && !isDead)//Cuando se presione espacio se salta
+        if (input.basicJump && isTouchingFloor() && !isDead)
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
@@ -199,7 +199,9 @@ public class PlayerController : MonoBehaviour
     {
         PlayJumpAudio();
         wallJumping = true;
-        finalWallJumpForce = rb.velocity.y > 0 ? wallJumpForce : wallJumpForce + (rb.velocity.y * (Physics2D.gravity.y * rb.gravityScale));
+        finalWallJumpForce = rb.velocity.y > 0 ? 
+            wallJumpForce : 
+            wallJumpForce + (rb.velocity.y * (Physics2D.gravity.y * rb.gravityScale));
         rb.AddForce(wallJumpDirection * new Vector2(wallJumpForce, finalWallJumpForce), ForceMode2D.Impulse);
         wallJumpDirection.x *= -1;
         spr.flipX = wallJumpDirection.x < 0 ? false : true;
