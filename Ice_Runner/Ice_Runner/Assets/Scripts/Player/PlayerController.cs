@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
         {
             wallJumping = false;
             wallJumpDirection.x = -1;
+            spr.flipX = false;
         }
     }
 
@@ -201,6 +202,7 @@ public class PlayerController : MonoBehaviour
         finalWallJumpForce = rb.velocity.y > 0 ? wallJumpForce : wallJumpForce + (rb.velocity.y * (Physics2D.gravity.y * rb.gravityScale));
         rb.AddForce(wallJumpDirection * new Vector2(wallJumpForce, finalWallJumpForce), ForceMode2D.Impulse);
         wallJumpDirection.x *= -1;
+        spr.flipX = wallJumpDirection.x < 0 ? false : true;
     }
 
     public void DieAnimation()

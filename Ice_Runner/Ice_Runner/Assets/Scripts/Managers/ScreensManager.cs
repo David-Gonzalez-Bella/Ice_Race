@@ -16,7 +16,6 @@ public class ScreensManager : MonoBehaviour
     public TransitionFadeIn transitionAnim;
     public Text levelTime;
     public Text levelScore;
-    public Text fpsText;
     public Slider mainThemeVolumeBar;
     public Slider sfxVolumeBar;
     private float deltaTime;
@@ -25,13 +24,6 @@ public class ScreensManager : MonoBehaviour
     {
         if (sharedInstance == null)
             sharedInstance = this;
-    }
-
-    void Update()
-    {
-        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-        float fps = 1.0f / deltaTime;
-        fpsText.text = Mathf.Ceil(fps).ToString();
     }
 
     public void ShowSettings(bool settingsEnabled)
